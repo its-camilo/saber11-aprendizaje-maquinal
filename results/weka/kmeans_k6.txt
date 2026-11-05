@@ -1,0 +1,72 @@
+
+
+=== Clustering stats for training data ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 2755632.0
+
+Initial starting points (random):
+
+Cluster 0: F,17,SinEstrato,Secundaria,Secundaria,Si,Si,Si,Si,'5 a 6',Cinco,OFICIAL,RURAL,UNICA,N,TÉCNICO/ACADÉMICO,MIXTO
+Cluster 1: M,18,E2,ProfesionalInc,Secundaria,No,Si,No,Si,'3 a 4',Tres,OFICIAL,RURAL,TARDE,N,TÉCNICO/ACADÉMICO,MIXTO
+Cluster 2: M,17,E2,Secundaria,Primaria,Si,Si,No,Si,'3 a 4',Dos,OFICIAL,RURAL,TARDE,N,ACADÉMICO,MIXTO
+Cluster 3: M,<=16,E3,Secundaria,Secundaria,Si,Si,No,Si,'3 a 4',Tres,OFICIAL,URBANO,UNICA,N,ACADÉMICO,MIXTO
+Cluster 4: F,<=16,E1,SecundariaInc,Primaria,Si,Si,Si,No,'3 a 4',Dos,OFICIAL,RURAL,MAÑANA,N,TÉCNICO/ACADÉMICO,MIXTO
+Cluster 5: F,18,E2,Secundaria,Secundaria,Si,No,Si,Si,'3 a 4',Dos,OFICIAL,URBANO,NOCHE,N,TÉCNICO/ACADÉMICO,MIXTO
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                  Cluster#
+Attribute                      Full Data                 0                 1                 2                 3                 4                 5
+                              (530815.0)        (101207.0)         (90264.0)        (123129.0)        (102417.0)         (77057.0)         (36741.0)
+====================================================================================================================================================
+estu_genero                            F                 F                 M                 M                 M                 F                 F
+edad                                <=16                17                18                17              <=16              <=16                18
+fami_estratovivienda                  E2                E2                E2                E2                E3                E1                E2
+fami_educacionmadre           Secundaria        Secundaria          Primaria        Secundaria        Secundaria          Primaria        Secundaria
+fami_educacionpadre             Primaria        Secundaria          Primaria          Primaria        Secundaria          Primaria        Secundaria
+fami_tieneinternet                    Si                Si                No                Si                Si                Si                Si
+fami_tienecomputador                  Si                Si                No                Si                Si                No                No
+fami_tieneautomovil                   No                Si                No                No                No                No                No
+fami_tienelavadora                    Si                Si                Si                Si                Si                No                Si
+fami_personashogar                 3 a 4             5 a 6             3 a 4             3 a 4             3 a 4             3 a 4             3 a 4
+fami_cuartoshogar                   Tres              Tres              Tres               Dos              Tres               Dos               Dos
+cole_naturaleza                  OFICIAL           OFICIAL           OFICIAL           OFICIAL           OFICIAL           OFICIAL           OFICIAL
+cole_area_ubicacion               URBANO            URBANO            URBANO            URBANO            URBANO            URBANO            URBANO
+cole_jornada                      MAÑANA             UNICA            MAÑANA            MAÑANA            MAÑANA            MAÑANA            MAÑANA
+cole_bilingue                          N                 N                 N                 N                 N                 N                 N
+cole_caracter                  ACADÉMICO TÉCNICO/ACADÉMICO         ACADÉMICO         ACADÉMICO         ACADÉMICO TÉCNICO/ACADÉMICO TÉCNICO/ACADÉMICO
+cole_genero                        MIXTO             MIXTO             MIXTO             MIXTO             MIXTO             MIXTO             MIXTO
+
+
+Clustered Instances
+
+0      101207 ( 19%)
+1       90264 ( 17%)
+2      123129 ( 23%)
+3      102417 ( 19%)
+4       77057 ( 15%)
+5       36741 (  7%)
+
+
+Class attribute: desempeno
+Classes to Clusters:
+
+     0     1     2     3     4     5  <-- assigned to cluster
+ 56887 26899 67113 67713 30548 14933 | Alto
+ 44320 63365 56016 34704 46509 21808 | Bajo
+
+Cluster 0 <-- No class
+Cluster 1 <-- Bajo
+Cluster 2 <-- No class
+Cluster 3 <-- Alto
+Cluster 4 <-- No class
+Cluster 5 <-- No class
+
+Incorrectly clustered instances :	399737.0	 75.3063 %
+

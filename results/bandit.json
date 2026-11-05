@@ -1,0 +1,456 @@
+{
+ "aleatoria": {
+  "recompensa_media": 0.0003273109315780943,
+  "arrepentimiento_total": 307471.5272013336,
+  "arrep_std": 501.2444486320604,
+  "acierto_area_optima": 0.20006468041282433
+ },
+ "siempre_mat": {
+  "recompensa_media": -6.957981858992306e-17,
+  "arrepentimiento_total": 307645.26875347923,
+  "arrep_std": 3.3606208697288864e-11,
+  "acierto_area_optima": 0.20317813174081364
+ },
+ "egreedy_sin_ctx": {
+  "recompensa_media": -0.00020040012953257986,
+  "arrepentimiento_total": 307751.6441482371,
+  "arrep_std": 102.63413675213177,
+  "acierto_area_optima": 0.17859392318102038
+ },
+ "egreedy_ctx": {
+  "recompensa_media": 0.06785939012209301,
+  "arrepentimiento_total": 271624.4865858204,
+  "arrep_std": 804.9051179566148,
+  "acierto_area_optima": 0.2485015181058058
+ },
+ "linucb": {
+  "recompensa_media": 0.071431398909084,
+  "arrepentimiento_total": 269728.4107415538,
+  "arrep_std": 854.2074673771936,
+  "acierto_area_optima": 0.25249537660641347
+ },
+ "oraculo": {
+  "recompensa_media": 0.5795715432937638,
+  "arrepentimiento_total": 0.0,
+  "acierto_area_optima": 1.0
+ },
+ "perfiles": {
+  "fami_estratovivienda": {
+   "E1": {
+    "elegida": {
+     "Inglés": 0.599,
+     "Matemáticas": 0.201,
+     "Sociales": 0.108,
+     "Lectura": 0.075,
+     "Naturales": 0.018
+    },
+    "optima": {
+     "Inglés": 0.3,
+     "Lectura": 0.194,
+     "Matemáticas": 0.181,
+     "Sociales": 0.177,
+     "Naturales": 0.149
+    },
+    "n": 145633
+   },
+   "E2": {
+    "elegida": {
+     "Inglés": 0.439,
+     "Matemáticas": 0.217,
+     "Sociales": 0.193,
+     "Lectura": 0.076,
+     "Naturales": 0.075
+    },
+    "optima": {
+     "Inglés": 0.263,
+     "Matemáticas": 0.195,
+     "Lectura": 0.19,
+     "Sociales": 0.187,
+     "Naturales": 0.164
+    },
+    "n": 179811
+   },
+   "E3": {
+    "elegida": {
+     "Sociales": 0.269,
+     "Matemáticas": 0.221,
+     "Inglés": 0.184,
+     "Lectura": 0.172,
+     "Naturales": 0.154
+    },
+    "optima": {
+     "Matemáticas": 0.224,
+     "Inglés": 0.202,
+     "Sociales": 0.201,
+     "Lectura": 0.197,
+     "Naturales": 0.177
+    },
+    "n": 110061
+   },
+   "E4": {
+    "elegida": {
+     "Matemáticas": 0.229,
+     "Naturales": 0.224,
+     "Sociales": 0.224,
+     "Inglés": 0.182,
+     "Lectura": 0.141
+    },
+    "optima": {
+     "Matemáticas": 0.241,
+     "Lectura": 0.23,
+     "Sociales": 0.214,
+     "Naturales": 0.176,
+     "Inglés": 0.139
+    },
+    "n": 27996
+   },
+   "E5": {
+    "elegida": {
+     "Naturales": 0.385,
+     "Matemáticas": 0.349,
+     "Lectura": 0.192,
+     "Sociales": 0.074
+    },
+    "optima": {
+     "Matemáticas": 0.251,
+     "Lectura": 0.238,
+     "Sociales": 0.212,
+     "Naturales": 0.183,
+     "Inglés": 0.116
+    },
+    "n": 8404
+   },
+   "E6": {
+    "elegida": {
+     "Matemáticas": 0.468,
+     "Naturales": 0.443,
+     "Inglés": 0.077,
+     "Lectura": 0.012
+    },
+    "optima": {
+     "Lectura": 0.253,
+     "Matemáticas": 0.251,
+     "Sociales": 0.193,
+     "Naturales": 0.182,
+     "Inglés": 0.121
+    },
+    "n": 3839
+   },
+   "SinEstrato": {
+    "elegida": {
+     "Inglés": 0.425,
+     "Matemáticas": 0.28,
+     "Lectura": 0.138,
+     "Sociales": 0.12,
+     "Naturales": 0.038
+    },
+    "optima": {
+     "Lectura": 0.226,
+     "Matemáticas": 0.224,
+     "Inglés": 0.224,
+     "Sociales": 0.182,
+     "Naturales": 0.144
+    },
+    "n": 19386
+   }
+  },
+  "cole_naturaleza": {
+   "NO OFICIAL": {
+    "elegida": {
+     "Sociales": 0.55,
+     "Matemáticas": 0.233,
+     "Lectura": 0.183,
+     "Naturales": 0.033,
+     "Inglés": 0.001
+    },
+    "optima": {
+     "Matemáticas": 0.237,
+     "Lectura": 0.21,
+     "Sociales": 0.199,
+     "Naturales": 0.18,
+     "Inglés": 0.174
+    },
+    "n": 120402
+   },
+   "OFICIAL": {
+    "elegida": {
+     "Inglés": 0.508,
+     "Matemáticas": 0.223,
+     "Naturales": 0.117,
+     "Lectura": 0.089,
+     "Sociales": 0.062
+    },
+    "optima": {
+     "Inglés": 0.268,
+     "Matemáticas": 0.193,
+     "Lectura": 0.193,
+     "Sociales": 0.184,
+     "Naturales": 0.161
+    },
+    "n": 410412
+   }
+  },
+  "cole_area_ubicacion": {
+   "RURAL": {
+    "elegida": {
+     "Inglés": 0.539,
+     "Lectura": 0.177,
+     "Matemáticas": 0.154,
+     "Naturales": 0.106,
+     "Sociales": 0.024
+    },
+    "optima": {
+     "Inglés": 0.267,
+     "Lectura": 0.225,
+     "Matemáticas": 0.193,
+     "Sociales": 0.176,
+     "Naturales": 0.139
+    },
+    "n": 89751
+   },
+   "URBANO": {
+    "elegida": {
+     "Inglés": 0.364,
+     "Matemáticas": 0.24,
+     "Sociales": 0.203,
+     "Lectura": 0.097,
+     "Naturales": 0.096
+    },
+    "optima": {
+     "Inglés": 0.243,
+     "Matemáticas": 0.205,
+     "Lectura": 0.191,
+     "Sociales": 0.19,
+     "Naturales": 0.171
+    },
+    "n": 441063
+   }
+  },
+  "fami_tieneinternet": {
+   "No": {
+    "elegida": {
+     "Inglés": 0.571,
+     "Matemáticas": 0.152,
+     "Lectura": 0.107,
+     "Naturales": 0.09,
+     "Sociales": 0.08
+    },
+    "optima": {
+     "Inglés": 0.281,
+     "Lectura": 0.212,
+     "Matemáticas": 0.185,
+     "Sociales": 0.176,
+     "Naturales": 0.145
+    },
+    "n": 136159
+   },
+   "Si": {
+    "elegida": {
+     "Inglés": 0.345,
+     "Matemáticas": 0.247,
+     "Sociales": 0.218,
+     "Lectura": 0.103,
+     "Naturales": 0.088
+    },
+    "optima": {
+     "Inglés": 0.236,
+     "Matemáticas": 0.208,
+     "Sociales": 0.194,
+     "Lectura": 0.192,
+     "Naturales": 0.169
+    },
+    "n": 363208
+   }
+  },
+  "cole_bilingue": {
+   "N": {
+    "elegida": {
+     "Inglés": 0.409,
+     "Matemáticas": 0.227,
+     "Sociales": 0.169,
+     "Naturales": 0.1,
+     "Lectura": 0.096
+    },
+    "optima": {
+     "Inglés": 0.25,
+     "Matemáticas": 0.201,
+     "Lectura": 0.195,
+     "Sociales": 0.188,
+     "Naturales": 0.166
+    },
+    "n": 430127
+   },
+   "S": {
+    "elegida": {
+     "Inglés": 0.392,
+     "Matemáticas": 0.21,
+     "Lectura": 0.141,
+     "Naturales": 0.131,
+     "Sociales": 0.126
+    },
+    "optima": {
+     "Lectura": 0.216,
+     "Matemáticas": 0.215,
+     "Inglés": 0.205,
+     "Sociales": 0.204,
+     "Naturales": 0.16
+    },
+    "n": 5520
+   }
+  },
+  "cole_jornada": {
+   "COMPLETA": {
+    "elegida": {
+     "Sociales": 0.465,
+     "Inglés": 0.266,
+     "Lectura": 0.174,
+     "Naturales": 0.075,
+     "Matemáticas": 0.02
+    },
+    "optima": {
+     "Lectura": 0.221,
+     "Matemáticas": 0.217,
+     "Sociales": 0.202,
+     "Inglés": 0.192,
+     "Naturales": 0.168
+    },
+    "n": 76562
+   },
+   "MAÑANA": {
+    "elegida": {
+     "Inglés": 0.457,
+     "Matemáticas": 0.233,
+     "Lectura": 0.108,
+     "Naturales": 0.104,
+     "Sociales": 0.097
+    },
+    "optima": {
+     "Inglés": 0.257,
+     "Matemáticas": 0.2,
+     "Lectura": 0.191,
+     "Sociales": 0.187,
+     "Naturales": 0.165
+    },
+    "n": 207468
+   },
+   "NOCHE": {
+    "elegida": {
+     "Matemáticas": 0.384,
+     "Sociales": 0.384,
+     "Naturales": 0.138,
+     "Lectura": 0.091,
+     "Inglés": 0.004
+    },
+    "optima": {
+     "Matemáticas": 0.245,
+     "Lectura": 0.219,
+     "Inglés": 0.202,
+     "Naturales": 0.172,
+     "Sociales": 0.162
+    },
+    "n": 23651
+   },
+   "SABATINA": {
+    "elegida": {
+     "Matemáticas": 0.42,
+     "Sociales": 0.385,
+     "Lectura": 0.103,
+     "Naturales": 0.071,
+     "Inglés": 0.021
+    },
+    "optima": {
+     "Matemáticas": 0.242,
+     "Lectura": 0.22,
+     "Inglés": 0.219,
+     "Naturales": 0.166,
+     "Sociales": 0.153
+    },
+    "n": 28022
+   },
+   "TARDE": {
+    "elegida": {
+     "Inglés": 0.352,
+     "Matemáticas": 0.298,
+     "Sociales": 0.169,
+     "Naturales": 0.102,
+     "Lectura": 0.079
+    },
+    "optima": {
+     "Inglés": 0.249,
+     "Matemáticas": 0.207,
+     "Lectura": 0.192,
+     "Sociales": 0.188,
+     "Naturales": 0.164
+    },
+    "n": 49140
+   },
+   "UNICA": {
+    "elegida": {
+     "Inglés": 0.517,
+     "Matemáticas": 0.235,
+     "Naturales": 0.099,
+     "Lectura": 0.094,
+     "Sociales": 0.054
+    },
+    "optima": {
+     "Inglés": 0.273,
+     "Sociales": 0.191,
+     "Lectura": 0.186,
+     "Matemáticas": 0.185,
+     "Naturales": 0.164
+    },
+    "n": 145971
+   }
+  },
+  "estu_genero": {
+   "F": {
+    "elegida": {
+     "Matemáticas": 0.362,
+     "Inglés": 0.322,
+     "Naturales": 0.144,
+     "Sociales": 0.137,
+     "Lectura": 0.036
+    },
+    "optima": {
+     "Matemáticas": 0.237,
+     "Inglés": 0.236,
+     "Sociales": 0.18,
+     "Naturales": 0.179,
+     "Lectura": 0.168
+    },
+    "n": 288312
+   },
+   "M": {
+    "elegida": {
+     "Inglés": 0.478,
+     "Sociales": 0.216,
+     "Lectura": 0.198,
+     "Matemáticas": 0.064,
+     "Naturales": 0.044
+    },
+    "optima": {
+     "Inglés": 0.26,
+     "Lectura": 0.231,
+     "Sociales": 0.197,
+     "Matemáticas": 0.163,
+     "Naturales": 0.149
+    },
+    "n": 242498
+   }
+  }
+ },
+ "dist_optima_global": {
+  "Inglés": 0.247,
+  "Matemáticas": 0.203,
+  "Lectura": 0.197,
+  "Sociales": 0.188,
+  "Naturales": 0.165
+ },
+ "dist_elegida_global": {
+  "Inglés": 0.393,
+  "Matemáticas": 0.226,
+  "Sociales": 0.173,
+  "Lectura": 0.11,
+  "Naturales": 0.098
+ }
+}

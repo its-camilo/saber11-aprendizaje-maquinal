@@ -1,0 +1,385 @@
+
+Options: -C 0.25 -M 1000 
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+nse_colegio = NSE1: Bajo (13606.38/3237.05)
+nse_colegio = NSE2
+|   edad = 17
+|   |   estu_grupoetnia = COMUNIDAD ROM: Bajo (11.0/4.0)
+|   |   estu_grupoetnia = INDIGENA: Bajo (3308.6/762.13)
+|   |   estu_grupoetnia = NEGRO AFRODESCENDIENTE: Bajo (6982.69/1250.86)
+|   |   estu_grupoetnia = NINGUNO
+|   |   |   cole_naturaleza = NO OFICIAL: Bajo (6201.0/1330.86)
+|   |   |   cole_naturaleza = OFICIAL
+|   |   |   |   cole_jornada = COMPLETA: Bajo (4161.08/1478.58)
+|   |   |   |   cole_jornada = MAÑANA
+|   |   |   |   |   cole_area_ubicacion = RURAL: Bajo (6346.15/1630.42)
+|   |   |   |   |   cole_area_ubicacion = URBANA
+|   |   |   |   |   |   col_computador_nivel = 40-70
+|   |   |   |   |   |   |   estu_genero = F: Bajo (2815.41/1189.0)
+|   |   |   |   |   |   |   estu_genero = M: Alto (2537.7/1168.29)
+|   |   |   |   |   |   col_computador_nivel = 70-90: Alto (39.0/16.0)
+|   |   |   |   |   |   col_computador_nivel = <40: Bajo (11973.46/4197.26)
+|   |   |   |   |   |   col_computador_nivel = >90: Bajo (0.0)
+|   |   |   |   cole_jornada = NOCHE: Bajo (2250.29/216.16)
+|   |   |   |   cole_jornada = SABATINA: Bajo (1879.22/224.42)
+|   |   |   |   cole_jornada = TARDE: Bajo (5004.53/1619.35)
+|   |   |   |   cole_jornada = UNICA
+|   |   |   |   |   fami_estratovivienda = E1
+|   |   |   |   |   |   estu_genero = F: Bajo (4444.11/1732.54)
+|   |   |   |   |   |   estu_genero = M
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM20-35: Alto (1204.91/508.24)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM35-50: Bajo (762.82/326.0)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM<20: Bajo (1063.11/483.77)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM>50: Bajo (451.12/183.24)
+|   |   |   |   |   fami_estratovivienda = E2
+|   |   |   |   |   |   estu_genero = F: Bajo (3616.8/1391.77)
+|   |   |   |   |   |   estu_genero = M
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM20-35: Alto (1162.31/532.71)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM35-50: Bajo (743.95/316.4)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM<20: Bajo (1188.46/581.59)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM>50: Bajo (353.02/123.58)
+|   |   |   |   |   fami_estratovivienda = E3: Bajo (3128.37/1053.47)
+|   |   |   |   |   fami_estratovivienda = E4: Bajo (901.95/215.11)
+|   |   |   |   |   fami_estratovivienda = E5: Bajo (265.12/49.14)
+|   |   |   |   |   fami_estratovivienda = E6: Bajo (148.78/33.13)
+|   |   |   |   |   fami_estratovivienda = SinEstrato: Bajo (1367.3/383.45)
+|   |   estu_grupoetnia = PALENQUERO: Bajo (20.0/4.0)
+|   |   estu_grupoetnia = RAIZAL: Bajo (14.0/3.0)
+|   edad = 18: Bajo (39225.71/9562.59)
+|   edad = 19-20: Bajo (18064.82/3342.65)
+|   edad = <=16
+|   |   estu_grupoetnia = COMUNIDAD ROM: Alto (8.0/4.0)
+|   |   estu_grupoetnia = INDIGENA: Bajo (5922.1/2193.15)
+|   |   estu_grupoetnia = NEGRO AFRODESCENDIENTE: Bajo (11666.43/3332.2)
+|   |   estu_grupoetnia = NINGUNO
+|   |   |   cole_jornada = COMPLETA
+|   |   |   |   cole_area_ubicacion = RURAL: Bajo (3601.83/1374.68)
+|   |   |   |   cole_area_ubicacion = URBANA
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (1119.46/524.0)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (8.0)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (163.0/78.0)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (56.0/14.0)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (23.31/4.08)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (1050.0/398.0)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Bajo (8.0/2.0)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (3.0)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (97.0/44.0)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Bajo (41.15/17.08)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Alto (119.08/54.0)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (99.0/29.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (691.0/325.0)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (14.0/4.0)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (129.0/57.0)
+|   |   |   |   |   cole_depto_ubicacion = META: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (107.08/45.0)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Bajo (0.08)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (74.0/22.0)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (28.08/12.08)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Bajo (25.0/7.0)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Alto (0.0)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   col_computador_nivel = 40-70
+|   |   |   |   |   fami_situacioneconomica = Igual
+|   |   |   |   |   |   cole_area_ubicacion = RURAL: Bajo (1263.76/624.67)
+|   |   |   |   |   |   cole_area_ubicacion = URBANA: Alto (5799.84/2283.74)
+|   |   |   |   |   fami_situacioneconomica = Mejor
+|   |   |   |   |   |   estu_genero = F: Bajo (1594.3/617.19)
+|   |   |   |   |   |   estu_genero = M: Alto (1445.28/671.55)
+|   |   |   |   |   fami_situacioneconomica = Peor: Alto (1483.71/505.97)
+|   |   |   |   col_computador_nivel = 70-90: Alto (265.0/131.0)
+|   |   |   |   col_computador_nivel = <40
+|   |   |   |   |   cole_area_ubicacion = RURAL: Bajo (9402.86/3177.63)
+|   |   |   |   |   cole_area_ubicacion = URBANA
+|   |   |   |   |   |   fami_estratovivienda = E1
+|   |   |   |   |   |   |   estu_dedicacionlecturadiaria = 30 minutos o menos
+|   |   |   |   |   |   |   |   estu_genero = F: Bajo (2020.18/873.55)
+|   |   |   |   |   |   |   |   estu_genero = M: Alto (1352.21/602.9)
+|   |   |   |   |   |   |   estu_dedicacionlecturadiaria = Entre 1 y 2 horas: Alto (987.44/385.83)
+|   |   |   |   |   |   |   estu_dedicacionlecturadiaria = Entre 30 y 60 minutos: Alto (2382.52/987.82)
+|   |   |   |   |   |   |   estu_dedicacionlecturadiaria = Más de 2 horas: Alto (456.28/155.49)
+|   |   |   |   |   |   |   estu_dedicacionlecturadiaria = No leo por entretenimiento: Bajo (1796.05/792.65)
+|   |   |   |   |   |   fami_estratovivienda = E2
+|   |   |   |   |   |   |   fami_educacionmadre = Ninguna: Bajo (179.26/85.18)
+|   |   |   |   |   |   |   fami_educacionmadre = Posgrado: Alto (60.8/24.48)
+|   |   |   |   |   |   |   fami_educacionmadre = Primaria: Bajo (1024.94/445.92)
+|   |   |   |   |   |   |   fami_educacionmadre = Profesional: Alto (789.38/351.5)
+|   |   |   |   |   |   |   fami_educacionmadre = ProfesionalInc: Alto (205.26/81.24)
+|   |   |   |   |   |   |   fami_educacionmadre = Secundaria
+|   |   |   |   |   |   |   |   estu_genero = F: Bajo (1279.0/519.59)
+|   |   |   |   |   |   |   |   estu_genero = M: Alto (1055.91/520.29)
+|   |   |   |   |   |   |   fami_educacionmadre = SecundariaInc: Bajo (981.15/391.13)
+|   |   |   |   |   |   |   fami_educacionmadre = Tecnica: Alto (1286.47/553.09)
+|   |   |   |   |   |   fami_estratovivienda = E3: Bajo (3208.44/1252.22)
+|   |   |   |   |   |   fami_estratovivienda = E4: Bajo (1102.61/311.94)
+|   |   |   |   |   |   fami_estratovivienda = E5: Bajo (362.5/105.77)
+|   |   |   |   |   |   fami_estratovivienda = E6: Bajo (150.39/36.13)
+|   |   |   |   |   |   fami_estratovivienda = SinEstrato: Bajo (1442.16/461.78)
+|   |   |   |   col_computador_nivel = >90: Alto (14.0/7.0)
+|   |   |   cole_jornada = NOCHE: Bajo (1184.72/112.1)
+|   |   |   cole_jornada = SABATINA: Bajo (2216.23/258.48)
+|   |   |   cole_jornada = TARDE
+|   |   |   |   col_computador_nivel = 40-70: Alto (1910.53/894.45)
+|   |   |   |   col_computador_nivel = 70-90: Bajo (0.0)
+|   |   |   |   col_computador_nivel = <40: Bajo (5685.89/2111.54)
+|   |   |   |   col_computador_nivel = >90: Bajo (2.0)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   fami_estratovivienda = E1
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Alto (8.91/4.15)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (415.11/160.16)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (68.44/32.3)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (2080.15/1022.3)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (207.57/91.21)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Alto (313.13/146.59)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (578.42/232.07)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Bajo (300.05/138.65)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Alto (187.37/77.57)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (177.54/73.18)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (366.84/178.6)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Alto (479.38/193.01)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Alto (41.21/17.68)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Alto (897.26/265.27)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (826.98/372.39)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Bajo (11.77/5.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (29.91/11.77)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (350.47/143.78)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Alto (279.18/130.87)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (799.72/303.13)
+|   |   |   |   |   cole_depto_ubicacion = META: Alto (199.48/99.74)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (180.67/50.89)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (1513.41/557.12)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (327.97/139.13)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (161.9/66.95)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Bajo (198.25/90.57)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (1.0)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (927.49/346.18)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Alto (450.97/134.22)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (782.79/364.66)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Bajo (527.67/263.15)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Alto (20.03/8.03)
+|   |   |   |   fami_estratovivienda = E2
+|   |   |   |   |   fami_situacioneconomica = Igual
+|   |   |   |   |   |   fami_tienecomputador = No
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM20-35: Alto (1644.09/696.27)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM35-50: Bajo (1191.58/566.69)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM<20: Bajo (1160.76/547.79)
+|   |   |   |   |   |   |   ipm_mpio_nivel = IPM>50: Bajo (573.41/236.95)
+|   |   |   |   |   |   fami_tienecomputador = Si: Alto (3139.37/1248.13)
+|   |   |   |   |   fami_situacioneconomica = Mejor: Bajo (3210.06/1414.51)
+|   |   |   |   |   fami_situacioneconomica = Peor: Alto (1554.51/600.71)
+|   |   |   |   fami_estratovivienda = E3
+|   |   |   |   |   fami_tienecomputador = No: Bajo (2670.66/960.74)
+|   |   |   |   |   fami_tienecomputador = Si
+|   |   |   |   |   |   estu_genero = F: Bajo (1308.06/580.44)
+|   |   |   |   |   |   estu_genero = M: Alto (1287.89/598.28)
+|   |   |   |   fami_estratovivienda = E4: Bajo (1553.7/522.69)
+|   |   |   |   fami_estratovivienda = E5: Bajo (477.48/150.57)
+|   |   |   |   fami_estratovivienda = E6: Bajo (201.63/44.27)
+|   |   |   |   fami_estratovivienda = SinEstrato: Bajo (2144.19/803.35)
+|   |   estu_grupoetnia = PALENQUERO: Bajo (29.0/12.0)
+|   |   estu_grupoetnia = RAIZAL: Bajo (17.0/4.0)
+|   edad = >20: Bajo (10389.26/891.69)
+nse_colegio = NSE3
+|   edad = 17
+|   |   col_computador_nivel = 40-70
+|   |   |   cole_jornada = COMPLETA: Alto (2291.5/970.05)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   cole_naturaleza = NO OFICIAL
+|   |   |   |   |   estu_desplazacolegio = Caminando o en bicicleta: Bajo (1744.1/761.8)
+|   |   |   |   |   estu_desplazacolegio = En bus o transporte público: Bajo (1672.65/578.67)
+|   |   |   |   |   estu_desplazacolegio = En transporte escolar o particular: Alto (1319.43/588.89)
+|   |   |   |   |   estu_desplazacolegio = Otro (burro o caballo, canoa, lancha, etc.): Bajo (1.1/0.04)
+|   |   |   |   cole_naturaleza = OFICIAL
+|   |   |   |   |   estu_genero = F
+|   |   |   |   |   |   estu_dedicacionlecturadiaria = 30 minutos o menos: Bajo (2856.42/1303.51)
+|   |   |   |   |   |   estu_dedicacionlecturadiaria = Entre 1 y 2 horas: Alto (732.21/298.37)
+|   |   |   |   |   |   estu_dedicacionlecturadiaria = Entre 30 y 60 minutos: Alto (1890.48/767.66)
+|   |   |   |   |   |   estu_dedicacionlecturadiaria = Más de 2 horas: Alto (336.75/115.11)
+|   |   |   |   |   |   estu_dedicacionlecturadiaria = No leo por entretenimiento: Bajo (1779.36/699.68)
+|   |   |   |   |   estu_genero = M: Alto (6935.64/2593.62)
+|   |   |   cole_jornada = NOCHE: Bajo (1517.95/312.61)
+|   |   |   cole_jornada = SABATINA: Bajo (2367.51/582.46)
+|   |   |   cole_jornada = TARDE
+|   |   |   |   estu_genero = F: Bajo (3066.44/1345.0)
+|   |   |   |   estu_genero = M: Alto (2739.0/1212.0)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   estu_genero = F
+|   |   |   |   |   estu_dedicacionlecturadiaria = 30 minutos o menos: Bajo (2935.88/1371.96)
+|   |   |   |   |   estu_dedicacionlecturadiaria = Entre 1 y 2 horas: Alto (815.95/318.77)
+|   |   |   |   |   estu_dedicacionlecturadiaria = Entre 30 y 60 minutos: Alto (2029.32/876.89)
+|   |   |   |   |   estu_dedicacionlecturadiaria = Más de 2 horas: Alto (410.75/131.03)
+|   |   |   |   |   estu_dedicacionlecturadiaria = No leo por entretenimiento: Bajo (1784.33/709.67)
+|   |   |   |   estu_genero = M: Alto (7057.26/2712.0)
+|   |   col_computador_nivel = 70-90
+|   |   |   fami_numlibros = 0 A 10 LIBROS
+|   |   |   |   fami_situacioneconomica = Igual
+|   |   |   |   |   cole_jornada = COMPLETA: Alto (1142.44/375.08)
+|   |   |   |   |   cole_jornada = MAÑANA: Alto (2055.58/784.7)
+|   |   |   |   |   cole_jornada = NOCHE: Bajo (103.97/41.68)
+|   |   |   |   |   cole_jornada = SABATINA: Bajo (107.03/37.04)
+|   |   |   |   |   cole_jornada = TARDE: Alto (529.51/190.02)
+|   |   |   |   |   cole_jornada = UNICA: Alto (1915.85/738.44)
+|   |   |   |   fami_situacioneconomica = Mejor
+|   |   |   |   |   estu_genero = F: Bajo (1279.99/531.86)
+|   |   |   |   |   estu_genero = M: Alto (1471.94/655.23)
+|   |   |   |   fami_situacioneconomica = Peor: Alto (1345.75/377.45)
+|   |   |   fami_numlibros = 11 A 25 LIBROS: Alto (8132.55/2638.88)
+|   |   |   fami_numlibros = 26 A 100 LIBROS: Alto (5393.4/1338.98)
+|   |   |   fami_numlibros = MÁS DE 100 LIBROS: Alto (1181.43/296.99)
+|   |   col_computador_nivel = <40
+|   |   |   cole_jornada = COMPLETA: Alto (189.97/57.91)
+|   |   |   cole_jornada = MAÑANA: Bajo (1230.72/560.41)
+|   |   |   cole_jornada = NOCHE: Bajo (129.04/17.04)
+|   |   |   cole_jornada = SABATINA: Bajo (172.51/46.06)
+|   |   |   cole_jornada = TARDE: Bajo (257.4/87.09)
+|   |   |   cole_jornada = UNICA: Alto (1035.66/461.31)
+|   |   col_computador_nivel = >90: Alto (5331.31/1056.0)
+|   edad = 18
+|   |   estu_genero = F
+|   |   |   col_computador_nivel = 40-70: Bajo (9809.62/3251.75)
+|   |   |   col_computador_nivel = 70-90: Bajo (3458.08/1578.37)
+|   |   |   col_computador_nivel = <40: Bajo (673.61/232.0)
+|   |   |   col_computador_nivel = >90: Alto (459.12/166.0)
+|   |   estu_genero = M
+|   |   |   cole_jornada = COMPLETA: Alto (1441.63/535.38)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   cole_naturaleza = NO OFICIAL: Bajo (2110.24/911.62)
+|   |   |   |   cole_naturaleza = OFICIAL
+|   |   |   |   |   estu_dedicacioninternet = 30 minutos o menos: Bajo (437.67/189.1)
+|   |   |   |   |   estu_dedicacioninternet = Entre 1 y 3 horas: Alto (1554.53/596.74)
+|   |   |   |   |   estu_dedicacioninternet = Entre 30 y 60 minutos: Alto (1010.83/473.94)
+|   |   |   |   |   estu_dedicacioninternet = Más de 3 horas: Alto (1214.16/450.84)
+|   |   |   |   |   estu_dedicacioninternet = No Navega Internet: Bajo (109.42/54.02)
+|   |   |   cole_jornada = NOCHE: Bajo (1298.9/386.35)
+|   |   |   cole_jornada = SABATINA: Bajo (1362.68/401.24)
+|   |   |   cole_jornada = TARDE: Alto (2014.98/954.14)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   estu_dedicacioninternet = 30 minutos o menos: Bajo (526.64/234.7)
+|   |   |   |   estu_dedicacioninternet = Entre 1 y 3 horas: Alto (1716.3/675.79)
+|   |   |   |   estu_dedicacioninternet = Entre 30 y 60 minutos: Alto (1068.68/527.66)
+|   |   |   |   estu_dedicacioninternet = Más de 3 horas: Alto (1299.44/448.46)
+|   |   |   |   estu_dedicacioninternet = No Navega Internet: Bajo (122.1/47.86)
+|   edad = 19-20
+|   |   estu_genero = F: Bajo (3952.24/1099.37)
+|   |   estu_genero = M
+|   |   |   cole_jornada = COMPLETA: Alto (292.04/141.59)
+|   |   |   cole_jornada = MAÑANA: Bajo (1812.83/862.19)
+|   |   |   cole_jornada = NOCHE: Bajo (711.11/211.04)
+|   |   |   cole_jornada = SABATINA: Bajo (720.49/202.0)
+|   |   |   cole_jornada = TARDE: Bajo (669.19/322.15)
+|   |   |   cole_jornada = UNICA: Alto (1314.07/627.0)
+|   edad = <=16
+|   |   col_computador_nivel = 40-70
+|   |   |   cole_jornada = COMPLETA: Alto (4410.9/1330.26)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   estu_grupoetnia = COMUNIDAD ROM: Alto (3.0/1.0)
+|   |   |   |   estu_grupoetnia = INDIGENA: Alto (366.48/110.02)
+|   |   |   |   estu_grupoetnia = NEGRO AFRODESCENDIENTE: Alto (1650.18/754.11)
+|   |   |   |   estu_grupoetnia = NINGUNO: Alto (28495.74/9882.22)
+|   |   |   |   estu_grupoetnia = PALENQUERO: Alto (4.0/0.0)
+|   |   |   |   estu_grupoetnia = RAIZAL: Bajo (92.01/30.0)
+|   |   |   cole_jornada = NOCHE: Bajo (460.12/89.58)
+|   |   |   cole_jornada = SABATINA: Bajo (1053.21/258.15)
+|   |   |   cole_jornada = TARDE: Alto (7453.1/2931.94)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   estu_dedicacionlecturadiaria = 30 minutos o menos: Alto (8871.75/3268.49)
+|   |   |   |   estu_dedicacionlecturadiaria = Entre 1 y 2 horas: Alto (2217.52/566.85)
+|   |   |   |   estu_dedicacionlecturadiaria = Entre 30 y 60 minutos: Alto (6017.1/1650.68)
+|   |   |   |   estu_dedicacionlecturadiaria = Más de 2 horas: Alto (1068.22/214.09)
+|   |   |   |   estu_dedicacionlecturadiaria = No leo por entretenimiento
+|   |   |   |   |   estu_genero = F
+|   |   |   |   |   |   fami_tienecomputador = No: Bajo (1123.55/508.63)
+|   |   |   |   |   |   fami_tienecomputador = Si: Alto (1993.89/972.18)
+|   |   |   |   |   estu_genero = M: Alto (3437.06/1152.74)
+|   |   col_computador_nivel = 70-90: Alto (45782.62/10417.58)
+|   |   col_computador_nivel = <40
+|   |   |   cole_jornada = COMPLETA: Alto (340.45/87.45)
+|   |   |   cole_jornada = MAÑANA: Alto (2044.96/826.51)
+|   |   |   cole_jornada = NOCHE: Bajo (52.0/8.0)
+|   |   |   cole_jornada = SABATINA: Bajo (122.45/20.0)
+|   |   |   cole_jornada = TARDE: Bajo (331.96/158.0)
+|   |   |   cole_jornada = UNICA: Alto (1827.96/620.96)
+|   |   col_computador_nivel = >90: Alto (10658.51/1615.0)
+|   edad = >20: Bajo (3811.38/733.33)
+nse_colegio = NSE4: Alto (35956.65/2740.52)
+
+Number of Leaves  : 	248
+
+Size of the tree : 	313
+
+
+Time taken to build model: 9.42 seconds
+
+Time taken to test model on training data: 7.56 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances      392808               70.0131 %
+Incorrectly Classified Instances    168241               29.9869 %
+Kappa statistic                          0.4002
+Mean absolute error                      0.396 
+Root mean squared error                  0.4447
+Relative absolute error                 79.192  %
+Root relative squared error             88.936  %
+Total Number of Instances           561049     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.690    0.290    0.703      0.690    0.696      0.400    0.762     0.753     Alto
+                 0.710    0.310    0.697      0.710    0.704      0.400    0.762     0.742     Bajo
+Weighted Avg.    0.700    0.300    0.700      0.700    0.700      0.400    0.762     0.747     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 192982  86674 |      a = Alto
+  81567 199826 |      b = Bajo
+
+Time taken to perform cross-validation: 104.81 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances      391556               69.79   %
+Incorrectly Classified Instances    169493               30.21   %
+Kappa statistic                          0.3958
+Mean absolute error                      0.3976
+Root mean squared error                  0.4458
+Relative absolute error                 79.5177 %
+Root relative squared error             89.1679 %
+Total Number of Instances           561049     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.689    0.293    0.700      0.689    0.694      0.396    0.759     0.756     Alto
+                 0.707    0.311    0.696      0.707    0.701      0.396    0.759     0.740     Bajo
+Weighted Avg.    0.698    0.302    0.698      0.698    0.698      0.396    0.759     0.748     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 192595  87061 |      a = Alto
+  82432 198961 |      b = Bajo
+

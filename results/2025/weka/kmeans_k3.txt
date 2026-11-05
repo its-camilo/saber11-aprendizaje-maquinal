@@ -1,0 +1,68 @@
+
+
+=== Clustering stats for training data ===
+
+
+kMeans
+======
+
+Number of iterations: 5
+Within cluster sum of squared errors: 4267542.0
+
+Initial starting points (random):
+
+Cluster 0: F,18,E2,Secundaria,Secundaria,'0 A 10 LIBROS',Si,Si,No,Si,'3 a 4',Dos,0,'Todos o casi todos los días',OFICIAL,URBANA,MAÑANA,N,ACADÉMICO,MIXTO,NSE2,IPM>50
+Cluster 1: F,<=16,E4,Posgrado,Posgrado,'11 A 25 LIBROS',Si,Si,Si,Si,'1 a 2',Cuatro,'Menos de 10 horas','3 a 5 veces por semana','NO OFICIAL',URBANA,COMPLETA,N,ACADÉMICO,MIXTO,NSE3,IPM20-35
+Cluster 2: M,<=16,E2,Tecnica,Tecnica,'26 A 100 LIBROS',Si,Si,No,Si,'3 a 4',Tres,'Entre 21 y 30 horas','3 a 5 veces por semana','NO OFICIAL',RURAL,COMPLETA,N,TÉCNICO,MIXTO,NSE2,IPM35-50
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                               Cluster#
+Attribute                                         Full Data                           0                           1                           2
+                                                 (561049.0)                  (330419.0)                  (116652.0)                  (113978.0)
+===============================================================================================================================================
+estu_genero                                               F                           F                           F                           M
+edad                                                   <=16                        <=16                        <=16                        <=16
+fami_estratovivienda                                     E2                          E2                          E3                          E2
+fami_educacionmadre                              Secundaria                  Secundaria                 Profesional                     Tecnica
+fami_educacionpadre                              Secundaria                  Secundaria                 Profesional                  Secundaria
+fami_numlibros                                0 A 10 LIBROS               0 A 10 LIBROS              11 A 25 LIBROS               0 A 10 LIBROS
+fami_tieneinternet                                       Si                          Si                          Si                          Si
+fami_tienecomputador                                     Si                          No                          Si                          Si
+fami_tieneautomovil                                      No                          No                          Si                          No
+fami_tienelavadora                                       Si                          Si                          Si                          Si
+fami_personashogar                                    3 a 4                       3 a 4                       3 a 4                       3 a 4
+fami_cuartoshogar                                       Dos                         Dos                        Tres                        Tres
+estu_horassemanatrabaja                                   0                           0                           0                           0
+fami_comecarnepescadohuevo      Todos o casi todos los días Todos o casi todos los días Todos o casi todos los días      3 a 5 veces por semana
+cole_naturaleza                                     OFICIAL                     OFICIAL                  NO OFICIAL                     OFICIAL
+cole_area_ubicacion                                  URBANA                      URBANA                      URBANA                      URBANA
+cole_jornada                                         MAÑANA                      MAÑANA                    COMPLETA                       UNICA
+cole_bilingue                                             N                           N                           N                           N
+cole_caracter                                     ACADÉMICO                   ACADÉMICO                   ACADÉMICO                   ACADÉMICO
+cole_genero                                           MIXTO                       MIXTO                       MIXTO                       MIXTO
+nse_colegio                                            NSE2                        NSE2                        NSE3                        NSE2
+ipm_mpio_nivel                                       IPM<20                      IPM<20                      IPM<20                      IPM<20
+
+
+Clustered Instances
+
+0      330419 ( 59%)
+1      116652 ( 21%)
+2      113978 ( 20%)
+
+
+Class attribute: desempeno
+Classes to Clusters:
+
+      0      1      2  <-- assigned to cluster
+ 134382  86230  59044 | Alto
+ 196037  30422  54934 | Bajo
+
+Cluster 0 <-- Bajo
+Cluster 1 <-- Alto
+Cluster 2 <-- No class
+
+Incorrectly clustered instances :	278782.0	 49.6894 %
+

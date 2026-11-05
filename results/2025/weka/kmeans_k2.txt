@@ -1,0 +1,65 @@
+
+
+=== Clustering stats for training data ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 4460743.0
+
+Initial starting points (random):
+
+Cluster 0: F,18,E2,Secundaria,Secundaria,'0 A 10 LIBROS',Si,Si,No,Si,'3 a 4',Dos,0,'Todos o casi todos los días',OFICIAL,URBANA,MAÑANA,N,ACADÉMICO,MIXTO,NSE2,IPM>50
+Cluster 1: F,<=16,E4,Posgrado,Posgrado,'11 A 25 LIBROS',Si,Si,Si,Si,'1 a 2',Cuatro,'Menos de 10 horas','3 a 5 veces por semana','NO OFICIAL',URBANA,COMPLETA,N,ACADÉMICO,MIXTO,NSE3,IPM20-35
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                               Cluster#
+Attribute                                         Full Data                           0                           1
+                                                 (561049.0)                  (426548.0)                  (134501.0)
+===================================================================================================================
+estu_genero                                               F                           F                           M
+edad                                                   <=16                        <=16                        <=16
+fami_estratovivienda                                     E2                          E2                          E3
+fami_educacionmadre                              Secundaria                  Secundaria                 Profesional
+fami_educacionpadre                              Secundaria                  Secundaria                 Profesional
+fami_numlibros                                0 A 10 LIBROS               0 A 10 LIBROS              11 A 25 LIBROS
+fami_tieneinternet                                       Si                          Si                          Si
+fami_tienecomputador                                     Si                          No                          Si
+fami_tieneautomovil                                      No                          No                          Si
+fami_tienelavadora                                       Si                          Si                          Si
+fami_personashogar                                    3 a 4                       3 a 4                       3 a 4
+fami_cuartoshogar                                       Dos                         Dos                        Tres
+estu_horassemanatrabaja                                   0                           0                           0
+fami_comecarnepescadohuevo      Todos o casi todos los días Todos o casi todos los días Todos o casi todos los días
+cole_naturaleza                                     OFICIAL                     OFICIAL                  NO OFICIAL
+cole_area_ubicacion                                  URBANA                      URBANA                      URBANA
+cole_jornada                                         MAÑANA                      MAÑANA                    COMPLETA
+cole_bilingue                                             N                           N                           N
+cole_caracter                                     ACADÉMICO                   ACADÉMICO                   ACADÉMICO
+cole_genero                                           MIXTO                       MIXTO                       MIXTO
+nse_colegio                                            NSE2                        NSE2                        NSE3
+ipm_mpio_nivel                                       IPM<20                      IPM<20                      IPM<20
+
+
+Clustered Instances
+
+0      426548 ( 76%)
+1      134501 ( 24%)
+
+
+Class attribute: desempeno
+Classes to Clusters:
+
+      0      1  <-- assigned to cluster
+ 182313  97343 | Alto
+ 244235  37158 | Bajo
+
+Cluster 0 <-- Bajo
+Cluster 1 <-- Alto
+
+Incorrectly clustered instances :	219471.0	 39.118  %
+

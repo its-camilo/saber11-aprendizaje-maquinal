@@ -1,0 +1,64 @@
+
+=== Classifier model (full training set) ===
+
+ZeroR predicts class value: Bajo
+
+Time taken to build model: 0.41 seconds
+
+Time taken to test model on training data: 2.9 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances      266722               50.2476 %
+Incorrectly Classified Instances    264093               49.7524 %
+Kappa statistic                          0     
+Mean absolute error                      0.5   
+Root mean squared error                  0.5   
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances           530815     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.498     Alto
+                 1.000    1.000    0.502      1.000    0.669      ?        0.500     0.502     Bajo
+Weighted Avg.    0.502    0.502    ?          0.502    ?          ?        0.500     0.500     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+      0 264093 |      a = Alto
+      0 266722 |      b = Bajo
+
+Time taken to perform cross-validation: 6.92 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances      266722               50.2476 %
+Incorrectly Classified Instances    264093               49.7524 %
+Kappa statistic                          0     
+Mean absolute error                      0.5   
+Root mean squared error                  0.5   
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances           530815     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.000    0.000    ?          0.000    ?          ?        0.500     0.498     Alto
+                 1.000    1.000    0.502      1.000    0.669      ?        0.500     0.502     Bajo
+Weighted Avg.    0.502    0.502    ?          0.502    ?          ?        0.500     0.500     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+      0 264093 |      a = Alto
+      0 266722 |      b = Bajo
+

@@ -1,0 +1,32 @@
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 19 desempeno):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.0560333   2 edad
+ 0.0531834   4 fami_educacionmadre
+ 0.0523887  14 cole_jornada
+ 0.0446457   7 fami_tienecomputador
+ 0.0397353  18 cole_depto_ubicacion
+ 0.0394426   5 fami_educacionpadre
+ 0.0358601   6 fami_tieneinternet
+ 0.0217897  12 cole_naturaleza
+ 0.021303    3 fami_estratovivienda
+ 0.018744   13 cole_area_ubicacion
+ 0.0155835   8 fami_tieneautomovil
+ 0.0125315   9 fami_tienelavadora
+ 0.0107399  10 fami_personashogar
+ 0.0074288  17 cole_genero
+ 0.0050765  11 fami_cuartoshogar
+ 0.0022675   1 estu_genero
+ 0.0015867  16 cole_caracter
+ 0.0000597  15 cole_bilingue
+
+Selected attributes: 2,4,14,7,18,5,6,12,3,13,8,9,10,17,11,1,16,15 : 18
+

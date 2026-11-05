@@ -1,0 +1,59 @@
+FilteredClusterer using weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 5 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 42 on data filtered through weka.filters.unsupervised.attribute.Remove -R 8
+
+Filtered Header
+@relation colegios_2025-weka.filters.unsupervised.attribute.Remove-R8
+
+@attribute pct_computador numeric
+@attribute pct_internet numeric
+@attribute pct_e1 numeric
+@attribute pct_madre_prof numeric
+@attribute pct_trabaja numeric
+@attribute pct_menos10libros numeric
+@attribute ipm_mpio numeric
+
+@data
+
+
+Clusterer Model
+
+kMeans
+======
+
+Number of iterations: 30
+Within cluster sum of squared errors: 1034.0535895391113
+
+Initial starting points (random):
+
+Cluster 0: 48.9,90.6,36.1,5.5,35.6,64.8,15.5
+Cluster 1: 20,42.9,32.5,4.9,48.9,65.9,44.8
+Cluster 2: 26.7,46.4,37,0,83.3,46.2,32
+Cluster 3: 52.4,78,32.5,5.1,33.3,56.4,23.2
+Cluster 4: 88.3,95.9,0.4,27,32.1,22.7,9
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                 Cluster#
+Attribute            Full Data          0          1          2          3          4
+                      (9692.0)   (2159.0)   (1763.0)   (1833.0)   (2484.0)   (1453.0)
+=====================================================================================
+pct_computador         49.8615    39.1433    18.1736    34.1709    68.6667    91.8816
+pct_internet           72.1744    74.0992     33.541     64.138    89.4568    96.7831
+pct_e1                 25.2812    38.6495    37.7938    32.9282    11.7328     3.7504
+pct_madre_prof         18.8185     9.8654     4.8564     7.0656    19.8159    62.1842
+pct_trabaja            44.0483    39.0855    52.7503    66.0349    38.7488    22.1868
+pct_menos10libros       50.218    59.1773     63.648    55.9858    45.9748    20.5882
+ipm_mpio               28.4009    23.8551     52.573    38.7956     15.503    14.7628
+
+
+
+
+=== Clustering stats for training data ===
+
+Clustered Instances
+0      2159 ( 22%)
+1      1763 ( 18%)
+2      1833 ( 19%)
+3      2484 ( 26%)
+4      1453 ( 15%)
+

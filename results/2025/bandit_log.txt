@@ -1,0 +1,7 @@
+n 561049 d 110
+aleatoria {'recompensa_media': -0.000112148641523057, 'arrepentimiento_total': 319585.31222299853, 'arrep_std': 302.33641367523245, 'acierto_area_optima': 0.20017740577620377}
+siempre_mat {'recompensa_media': 1.884652374110753e-16, 'arrepentimiento_total': 319522.3913398206, 'arrep_std': 4.7526356119646576e-11, 'acierto_area_optima': 0.2075736700359505}
+egreedy_sin_ctx {'recompensa_media': 0.00015202483254030116, 'arrepentimiento_total': 319437.09795954876, 'arrep_std': 147.65482915419506, 'acierto_area_optima': 0.21695668886912434}
+egreedy_ctx {'recompensa_media': 0.08025862158757169, 'arrepentimiento_total': 274493.3719567351, 'arrep_std': 995.0026327925555, 'acierto_area_optima': 0.25893757348585716}
+linucb {'recompensa_media': 0.08301979711460448, 'arrepentimiento_total': 272944.2171884689, 'arrep_std': 1202.0962553412985, 'acierto_area_optima': 0.26075262588472664}
+listo

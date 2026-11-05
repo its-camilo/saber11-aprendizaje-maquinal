@@ -1,0 +1,61 @@
+FilteredClusterer using weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 6 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 42 on data filtered through weka.filters.unsupervised.attribute.Remove -R 8
+
+Filtered Header
+@relation colegios_2025-weka.filters.unsupervised.attribute.Remove-R8
+
+@attribute pct_computador numeric
+@attribute pct_internet numeric
+@attribute pct_e1 numeric
+@attribute pct_madre_prof numeric
+@attribute pct_trabaja numeric
+@attribute pct_menos10libros numeric
+@attribute ipm_mpio numeric
+
+@data
+
+
+Clusterer Model
+
+kMeans
+======
+
+Number of iterations: 45
+Within cluster sum of squared errors: 958.1898353484455
+
+Initial starting points (random):
+
+Cluster 0: 48.9,90.6,36.1,5.5,35.6,64.8,15.5
+Cluster 1: 20,42.9,32.5,4.9,48.9,65.9,44.8
+Cluster 2: 26.7,46.4,37,0,83.3,46.2,32
+Cluster 3: 52.4,78,32.5,5.1,33.3,56.4,23.2
+Cluster 4: 88.3,95.9,0.4,27,32.1,22.7,9
+Cluster 5: 70,33.3,11.1,11.1,90,22.2,24.8
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                 Cluster#
+Attribute            Full Data          0          1          2          3          4          5
+                      (9692.0)   (1660.0)   (1507.0)   (1766.0)   (1621.0)   (1046.0)   (2092.0)
+================================================================================================
+pct_computador         49.8615    34.7622    17.1727    32.0813    79.6672    93.9145    55.2783
+pct_internet           72.1744    68.8153    30.1592     62.503    93.2935    97.3428    84.3219
+pct_e1                 25.2812     45.197    38.0851    32.5655     8.4335     2.6572     18.472
+pct_madre_prof         18.8185     8.9354     4.3203     7.1657    30.0527    69.6416    12.8251
+pct_trabaja            44.0483    39.5546    53.2074    64.8977    32.8938     19.481    44.3424
+pct_menos10libros       50.218    57.6857    63.7706    58.0467    37.3187    16.9965    54.5268
+ipm_mpio               28.4009    25.7297    52.3929    43.4442    15.1589    14.2632     17.868
+
+
+
+
+=== Clustering stats for training data ===
+
+Clustered Instances
+0      1660 ( 17%)
+1      1507 ( 16%)
+2      1766 ( 18%)
+3      1621 ( 17%)
+4      1046 ( 11%)
+5      2092 ( 22%)
+

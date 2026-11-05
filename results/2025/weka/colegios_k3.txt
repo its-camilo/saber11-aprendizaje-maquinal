@@ -1,0 +1,55 @@
+FilteredClusterer using weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 500 -num-slots 1 -S 42 on data filtered through weka.filters.unsupervised.attribute.Remove -R 8
+
+Filtered Header
+@relation colegios_2025-weka.filters.unsupervised.attribute.Remove-R8
+
+@attribute pct_computador numeric
+@attribute pct_internet numeric
+@attribute pct_e1 numeric
+@attribute pct_madre_prof numeric
+@attribute pct_trabaja numeric
+@attribute pct_menos10libros numeric
+@attribute ipm_mpio numeric
+
+@data
+
+
+Clusterer Model
+
+kMeans
+======
+
+Number of iterations: 32
+Within cluster sum of squared errors: 1306.8014431301967
+
+Initial starting points (random):
+
+Cluster 0: 48.9,90.6,36.1,5.5,35.6,64.8,15.5
+Cluster 1: 20,42.9,32.5,4.9,48.9,65.9,44.8
+Cluster 2: 26.7,46.4,37,0,83.3,46.2,32
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                 Cluster#
+Attribute            Full Data          0          1          2
+                      (9692.0)   (2079.0)   (3787.0)   (3826.0)
+===============================================================
+pct_computador         49.8615    88.7597    24.5473    53.7808
+pct_internet           72.1744    95.9708    48.5565     82.621
+pct_e1                 25.2812     4.7757    38.0624    23.7727
+pct_madre_prof         18.8185    52.6844     5.9365    13.1668
+pct_trabaja            44.0483    25.4328     55.494    42.8347
+pct_menos10libros       50.218       25.5    61.0511    52.9268
+ipm_mpio               28.4009     14.736    44.9176    19.4779
+
+
+
+
+=== Clustering stats for training data ===
+
+Clustered Instances
+0      2079 ( 21%)
+1      3787 ( 39%)
+2      3826 ( 39%)
+

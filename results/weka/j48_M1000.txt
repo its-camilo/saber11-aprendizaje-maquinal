@@ -1,0 +1,510 @@
+
+Options: -C 0.25 -M 1000 
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+fami_tienecomputador = No
+|   edad = 17
+|   |   cole_area_ubicacion = RURAL: Bajo (18585.11/4667.62)
+|   |   cole_area_ubicacion = URBANO
+|   |   |   cole_jornada = COMPLETA
+|   |   |   |   cole_naturaleza = NO OFICIAL: Alto (1600.99/509.57)
+|   |   |   |   cole_naturaleza = OFICIAL: Bajo (2153.27/989.4)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   fami_tieneinternet = No: Bajo (9798.92/3366.54)
+|   |   |   |   fami_tieneinternet = Si
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (6.0/2.0)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (1731.46/722.0)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Bajo (114.49/51.74)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (708.52/267.32)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Bajo (1473.0/729.0)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (1107.41/334.35)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (254.31/74.44)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Alto (270.5/132.65)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (131.88/47.72)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (171.84/76.86)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Alto (367.07/182.96)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Bajo (485.86/200.36)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (116.45/18.12)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (519.45/216.69)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (524.2/242.74)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Bajo (0.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (31.86/15.0)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (166.14/76.7)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (184.15/65.05)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (355.31/114.87)
+|   |   |   |   |   cole_depto_ubicacion = META: Bajo (446.27/193.01)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (700.7/304.52)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (280.44/114.42)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Bajo (99.27/48.51)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Bajo (47.58/18.05)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (300.48/148.19)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (11.06/4.74)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (655.32/254.18)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (327.03/131.73)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (247.08/108.73)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Bajo (1924.83/928.64)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (5.75)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Bajo (2.44/0.58)
+|   |   |   cole_jornada = NOCHE: Bajo (2575.25/461.74)
+|   |   |   cole_jornada = SABATINA: Bajo (3130.93/575.17)
+|   |   |   cole_jornada = TARDE: Bajo (7156.84/2702.58)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (61.93/14.0)
+|   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (1159.8/523.43)
+|   |   |   |   cole_depto_ubicacion = ARAUCA: Bajo (35.93/15.0)
+|   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (2571.58/922.01)
+|   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (1222.09/562.56)
+|   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (340.49/70.17)
+|   |   |   |   cole_depto_ubicacion = BOYACA: Alto (512.02/223.12)
+|   |   |   |   cole_depto_ubicacion = CALDAS: Alto (526.24/262.85)
+|   |   |   |   cole_depto_ubicacion = CAQUETA: Alto (138.85/69.12)
+|   |   |   |   cole_depto_ubicacion = CASANARE: Bajo (184.38/90.79)
+|   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (277.64/62.26)
+|   |   |   |   cole_depto_ubicacion = CESAR: Bajo (449.97/173.59)
+|   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (238.92/31.4)
+|   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (692.35/294.79)
+|   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Bajo (1245.77/622.47)
+|   |   |   |   cole_depto_ubicacion = GUAINIA: Bajo (22.47/9.47)
+|   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (21.19/2.47)
+|   |   |   |   cole_depto_ubicacion = HUILA: Bajo (357.57/178.45)
+|   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (530.0/177.1)
+|   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (728.89/184.59)
+|   |   |   |   cole_depto_ubicacion = META: Alto (246.47/109.16)
+|   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (216.5/104.05)
+|   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (1724.07/836.92)
+|   |   |   |   cole_depto_ubicacion = PUTUMAYO: Bajo (212.45/85.19)
+|   |   |   |   cole_depto_ubicacion = QUINDIO: Bajo (515.76/250.31)
+|   |   |   |   cole_depto_ubicacion = RISARALDA: Bajo (360.78/158.52)
+|   |   |   |   cole_depto_ubicacion = SAN ANDRES: Bajo (5.0)
+|   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (896.03/425.52)
+|   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (322.5/128.66)
+|   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (716.38/285.98)
+|   |   |   |   cole_depto_ubicacion = VALLE: Bajo (1022.41/445.54)
+|   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (0.0)
+|   |   |   |   cole_depto_ubicacion = VICHADA: Bajo (13.0/4.0)
+|   edad = 18: Bajo (41973.12/11447.9)
+|   edad = 19-20: Bajo (21557.26/4201.68)
+|   edad = <=16
+|   |   cole_area_ubicacion = RURAL
+|   |   |   fami_estratovivienda = E1
+|   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (2.38)
+|   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (1098.72/368.06)
+|   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (104.32/49.86)
+|   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (208.91/66.84)
+|   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (20.54/9.64)
+|   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (699.59/211.27)
+|   |   |   |   cole_depto_ubicacion = BOYACA: Bajo (260.93/129.99)
+|   |   |   |   cole_depto_ubicacion = CALDAS: Bajo (254.95/105.34)
+|   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (95.17/26.84)
+|   |   |   |   cole_depto_ubicacion = CASANARE: Alto (101.4/43.65)
+|   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (867.94/314.69)
+|   |   |   |   cole_depto_ubicacion = CESAR: Bajo (381.38/163.37)
+|   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (114.74/16.46)
+|   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (1802.02/766.52)
+|   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (327.76/135.3)
+|   |   |   |   cole_depto_ubicacion = GUAINIA: Bajo (3.0/1.0)
+|   |   |   |   cole_depto_ubicacion = GUAVIARE: Alto (20.86/10.43)
+|   |   |   |   cole_depto_ubicacion = HUILA: Alto (647.07/278.91)
+|   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (135.75/35.62)
+|   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (584.34/167.06)
+|   |   |   |   cole_depto_ubicacion = META: Alto (175.89/87.45)
+|   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (720.09/335.41)
+|   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Bajo (229.62/106.52)
+|   |   |   |   cole_depto_ubicacion = PUTUMAYO: Bajo (177.71/58.37)
+|   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (36.99/9.0)
+|   |   |   |   cole_depto_ubicacion = RISARALDA: Bajo (122.08/53.9)
+|   |   |   |   cole_depto_ubicacion = SAN ANDRES: Bajo (9.03/4.21)
+|   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (534.4/225.45)
+|   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (559.42/165.53)
+|   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (486.41/163.74)
+|   |   |   |   cole_depto_ubicacion = VALLE: Alto (509.58/244.76)
+|   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (2.18)
+|   |   |   |   cole_depto_ubicacion = VICHADA: Bajo (8.46/3.0)
+|   |   |   fami_estratovivienda = E2: Bajo (6697.54/2468.53)
+|   |   |   fami_estratovivienda = E3: Bajo (2430.13/637.97)
+|   |   |   fami_estratovivienda = E4: Bajo (954.83/174.26)
+|   |   |   fami_estratovivienda = E5: Bajo (368.87/57.93)
+|   |   |   fami_estratovivienda = E6: Bajo (202.4/25.62)
+|   |   |   fami_estratovivienda = SinEstrato: Bajo (2635.83/531.03)
+|   |   cole_area_ubicacion = URBANO
+|   |   |   cole_jornada = COMPLETA
+|   |   |   |   cole_naturaleza = NO OFICIAL: Alto (2861.5/655.51)
+|   |   |   |   cole_naturaleza = OFICIAL
+|   |   |   |   |   fami_estratovivienda = E1: Alto (1065.62/472.49)
+|   |   |   |   |   fami_estratovivienda = E2: Alto (1139.77/492.9)
+|   |   |   |   |   fami_estratovivienda = E3: Bajo (299.51/146.53)
+|   |   |   |   |   fami_estratovivienda = E4: Bajo (39.0/11.06)
+|   |   |   |   |   fami_estratovivienda = E5: Bajo (13.19/5.85)
+|   |   |   |   |   fami_estratovivienda = E6: Bajo (7.9/1.69)
+|   |   |   |   |   fami_estratovivienda = SinEstrato: Bajo (56.45/24.57)
+|   |   |   cole_jornada = MAÑANA
+|   |   |   |   fami_tieneinternet = No
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (29.26/11.87)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (872.63/339.14)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (154.17/68.59)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (803.69/282.51)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (421.82/188.1)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (1842.12/602.67)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (178.28/45.87)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Bajo (84.46/38.16)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (151.89/71.27)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (202.83/82.01)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (418.01/179.42)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Bajo (613.98/289.89)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (245.08/44.73)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (1167.99/539.22)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (233.56/104.25)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Bajo (0.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (57.05/26.47)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (107.22/28.96)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (258.39/106.08)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (439.23/163.02)
+|   |   |   |   |   cole_depto_ubicacion = META: Alto (310.2/142.7)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (843.92/357.66)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (176.52/66.86)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (88.58/34.54)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Bajo (26.3/11.84)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (132.96/62.66)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (23.59/11.0)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (482.09/171.15)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (946.7/416.97)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (232.41/84.52)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Bajo (1121.78/491.01)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Alto (39.8/18.8)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Alto (38.66/12.4)
+|   |   |   |   fami_tieneinternet = Si
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (6.67/2.07)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (2035.74/994.72)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (181.93/67.06)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (994.86/485.07)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (1401.23/578.1)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (2124.18/945.73)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (303.27/77.39)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Alto (290.42/108.29)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Alto (159.55/69.1)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (232.12/80.25)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Alto (529.72/227.36)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Alto (757.43/364.46)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (191.04/64.86)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Alto (981.49/439.29)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (590.09/242.46)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Alto (39.35/17.35)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (214.07/80.77)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (257.74/128.08)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (672.12/334.18)
+|   |   |   |   |   cole_depto_ubicacion = META: Alto (613.12/293.01)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (986.32/325.09)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (327.9/72.79)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (159.92/46.65)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (38.82/16.47)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (382.71/125.93)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (15.35/5.0)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (994.18/279.86)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Alto (715.74/312.45)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Alto (444.18/201.15)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Alto (2498.81/1155.75)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (8.67/2.47)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Alto (10.8/4.6)
+|   |   |   cole_jornada = NOCHE: Bajo (811.71/126.29)
+|   |   |   cole_jornada = SABATINA: Bajo (1181.35/209.59)
+|   |   |   cole_jornada = TARDE
+|   |   |   |   fami_tieneinternet = No: Bajo (3307.82/1308.25)
+|   |   |   |   fami_tieneinternet = Si
+|   |   |   |   |   fami_estratovivienda = E1: Alto (1809.26/873.27)
+|   |   |   |   |   fami_estratovivienda = E2: Alto (2143.24/971.77)
+|   |   |   |   |   fami_estratovivienda = E3: Alto (810.33/388.87)
+|   |   |   |   |   fami_estratovivienda = E4: Bajo (120.35/40.44)
+|   |   |   |   |   fami_estratovivienda = E5: Bajo (47.16/5.25)
+|   |   |   |   |   fami_estratovivienda = E6: Bajo (23.5/6.09)
+|   |   |   |   |   fami_estratovivienda = SinEstrato: Bajo (129.46/42.35)
+|   |   |   cole_jornada = UNICA
+|   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (39.4/16.47)
+|   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Alto (1197.44/519.3)
+|   |   |   |   cole_depto_ubicacion = ARAUCA: Bajo (25.0/7.0)
+|   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (4104.56/2037.81)
+|   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (1333.88/472.28)
+|   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (503.74/159.91)
+|   |   |   |   cole_depto_ubicacion = BOYACA: Alto (612.21/207.19)
+|   |   |   |   cole_depto_ubicacion = CALDAS: Alto (604.73/280.59)
+|   |   |   |   cole_depto_ubicacion = CAQUETA: Alto (213.71/92.66)
+|   |   |   |   cole_depto_ubicacion = CASANARE: Alto (263.98/83.86)
+|   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (538.0/211.9)
+|   |   |   |   cole_depto_ubicacion = CESAR: Alto (719.4/344.64)
+|   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (372.24/91.33)
+|   |   |   |   cole_depto_ubicacion = CORDOBA: Alto (1144.05/512.49)
+|   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (1454.83/553.64)
+|   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (20.47/5.0)
+|   |   |   |   cole_depto_ubicacion = GUAVIARE: Alto (14.33/6.0)
+|   |   |   |   cole_depto_ubicacion = HUILA: Alto (465.26/165.38)
+|   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (714.48/312.7)
+|   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (1049.73/337.04)
+|   |   |   |   cole_depto_ubicacion = META: Alto (333.93/124.98)
+|   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (348.24/136.66)
+|   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (1980.46/743.21)
+|   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (346.71/146.79)
+|   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (684.33/278.45)
+|   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (447.62/222.45)
+|   |   |   |   cole_depto_ubicacion = SAN ANDRES: Bajo (4.0)
+|   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (1230.97/456.11)
+|   |   |   |   cole_depto_ubicacion = SUCRE: Alto (515.23/221.98)
+|   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (1168.36/528.09)
+|   |   |   |   cole_depto_ubicacion = VALLE: Alto (1143.39/537.0)
+|   |   |   |   cole_depto_ubicacion = VAUPES: Alto (0.0)
+|   |   |   |   cole_depto_ubicacion = VICHADA: Alto (26.47/11.0)
+|   edad = >20: Bajo (11289.06/1224.44)
+fami_tienecomputador = Si
+|   edad = 17
+|   |   cole_naturaleza = NO OFICIAL
+|   |   |   cole_jornada = COMPLETA: Alto (15379.45/2387.22)
+|   |   |   cole_jornada = MAÑANA: Alto (8031.67/3011.59)
+|   |   |   cole_jornada = NOCHE: Bajo (617.44/193.15)
+|   |   |   cole_jornada = SABATINA: Bajo (1759.95/577.04)
+|   |   |   cole_jornada = TARDE: Bajo (834.94/403.96)
+|   |   |   cole_jornada = UNICA: Alto (1275.58/276.1)
+|   |   cole_naturaleza = OFICIAL
+|   |   |   cole_area_ubicacion = RURAL: Bajo (7149.34/2629.51)
+|   |   |   cole_area_ubicacion = URBANO
+|   |   |   |   cole_jornada = COMPLETA: Alto (1948.46/791.24)
+|   |   |   |   cole_jornada = MAÑANA
+|   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (25.53/7.0)
+|   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA
+|   |   |   |   |   |   estu_genero = F: Bajo (1950.04/960.77)
+|   |   |   |   |   |   estu_genero = M: Alto (1572.02/649.93)
+|   |   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (152.41/56.21)
+|   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (457.95/179.95)
+|   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (4201.7/1646.47)
+|   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (785.3/252.1)
+|   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (603.88/135.88)
+|   |   |   |   |   cole_depto_ubicacion = CALDAS: Alto (542.05/215.29)
+|   |   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (192.95/90.14)
+|   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (260.03/107.02)
+|   |   |   |   |   cole_depto_ubicacion = CAUCA: Alto (424.79/180.34)
+|   |   |   |   |   cole_depto_ubicacion = CESAR: Bajo (427.07/202.96)
+|   |   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (136.77/38.74)
+|   |   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (401.95/175.22)
+|   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (1171.06/463.7)
+|   |   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (0.0)
+|   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Alto (45.53/20.53)
+|   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (271.76/95.88)
+|   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (230.31/75.95)
+|   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (340.29/117.74)
+|   |   |   |   |   cole_depto_ubicacion = META: Alto (616.66/302.76)
+|   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (802.34/255.93)
+|   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (203.41/64.14)
+|   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Alto (121.88/48.6)
+|   |   |   |   |   cole_depto_ubicacion = QUINDIO: Bajo (41.67/17.0)
+|   |   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (604.6/223.05)
+|   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Alto (22.53/7.0)
+|   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (1348.76/399.35)
+|   |   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (279.39/109.41)
+|   |   |   |   |   cole_depto_ubicacion = TOLIMA: Alto (489.1/223.24)
+|   |   |   |   |   cole_depto_ubicacion = VALLE: Alto (2671.01/1145.12)
+|   |   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (16.0/8.0)
+|   |   |   |   |   cole_depto_ubicacion = VICHADA: Bajo (14.07/4.0)
+|   |   |   |   cole_jornada = NOCHE: Bajo (1202.32/263.88)
+|   |   |   |   cole_jornada = SABATINA: Bajo (631.27/150.48)
+|   |   |   |   cole_jornada = TARDE
+|   |   |   |   |   estu_genero = F
+|   |   |   |   |   |   fami_estratovivienda = E1: Bajo (718.19/312.17)
+|   |   |   |   |   |   fami_estratovivienda = E2: Alto (1665.32/813.42)
+|   |   |   |   |   |   fami_estratovivienda = E3: Alto (1090.43/455.11)
+|   |   |   |   |   |   fami_estratovivienda = E4: Alto (153.44/68.8)
+|   |   |   |   |   |   fami_estratovivienda = E5: Alto (27.14/13.52)
+|   |   |   |   |   |   fami_estratovivienda = E6: Bajo (7.44/2.17)
+|   |   |   |   |   |   fami_estratovivienda = SinEstrato: Bajo (59.67/15.36)
+|   |   |   |   |   estu_genero = M: Alto (3448.69/1389.19)
+|   |   |   |   cole_jornada = UNICA
+|   |   |   |   |   fami_educacionmadre = Ninguna: Bajo (159.69/61.69)
+|   |   |   |   |   fami_educacionmadre = Posgrado: Alto (359.15/84.55)
+|   |   |   |   |   fami_educacionmadre = Primaria
+|   |   |   |   |   |   estu_genero = F: Bajo (1707.64/759.49)
+|   |   |   |   |   |   estu_genero = M: Alto (1202.5/543.2)
+|   |   |   |   |   fami_educacionmadre = Profesional: Alto (2530.26/891.86)
+|   |   |   |   |   fami_educacionmadre = ProfesionalInc: Alto (719.85/237.9)
+|   |   |   |   |   fami_educacionmadre = Secundaria
+|   |   |   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (6.9/1.69)
+|   |   |   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Alto (1435.03/665.82)
+|   |   |   |   |   |   cole_depto_ubicacion = ARAUCA: Bajo (1.72)
+|   |   |   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (578.95/261.89)
+|   |   |   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (1086.86/394.47)
+|   |   |   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (30.11/10.24)
+|   |   |   |   |   |   cole_depto_ubicacion = BOYACA: Alto (209.18/63.23)
+|   |   |   |   |   |   cole_depto_ubicacion = CALDAS: Alto (256.13/104.77)
+|   |   |   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (43.47/21.61)
+|   |   |   |   |   |   cole_depto_ubicacion = CASANARE: Alto (80.52/35.1)
+|   |   |   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (61.63/24.45)
+|   |   |   |   |   |   cole_depto_ubicacion = CESAR: Alto (73.31/32.39)
+|   |   |   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (26.09/3.24)
+|   |   |   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (88.97/40.49)
+|   |   |   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (579.18/217.21)
+|   |   |   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (5.34/1.34)
+|   |   |   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (2.28/0.18)
+|   |   |   |   |   |   cole_depto_ubicacion = HUILA: Alto (161.64/63.56)
+|   |   |   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (65.58/23.96)
+|   |   |   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (97.32/30.36)
+|   |   |   |   |   |   cole_depto_ubicacion = META: Alto (116.83/42.49)
+|   |   |   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (52.18/17.89)
+|   |   |   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (351.78/116.36)
+|   |   |   |   |   |   cole_depto_ubicacion = PUTUMAYO: Bajo (34.05/15.61)
+|   |   |   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (234.56/101.34)
+|   |   |   |   |   |   cole_depto_ubicacion = RISARALDA: Alto (169.48/69.16)
+|   |   |   |   |   |   cole_depto_ubicacion = SAN ANDRES: Bajo (1.0)
+|   |   |   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (265.61/95.49)
+|   |   |   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (52.99/17.48)
+|   |   |   |   |   |   cole_depto_ubicacion = TOLIMA: Alto (266.83/131.33)
+|   |   |   |   |   |   cole_depto_ubicacion = VALLE: Alto (498.08/206.87)
+|   |   |   |   |   |   cole_depto_ubicacion = VAUPES: Alto (0.0)
+|   |   |   |   |   |   cole_depto_ubicacion = VICHADA: Alto (1.34/0.0)
+|   |   |   |   |   fami_educacionmadre = SecundariaInc
+|   |   |   |   |   |   estu_genero = F: Bajo (1554.8/756.26)
+|   |   |   |   |   |   estu_genero = M: Alto (1287.41/560.84)
+|   |   |   |   |   fami_educacionmadre = Tecnica: Alto (3786.0/1250.65)
+|   edad = 18
+|   |   cole_jornada = COMPLETA
+|   |   |   fami_estratovivienda = E1: Bajo (375.88/173.51)
+|   |   |   fami_estratovivienda = E2: Alto (1085.0/517.33)
+|   |   |   fami_estratovivienda = E3: Alto (1586.95/528.74)
+|   |   |   fami_estratovivienda = E4: Alto (746.59/156.97)
+|   |   |   fami_estratovivienda = E5: Alto (336.41/65.28)
+|   |   |   fami_estratovivienda = E6: Alto (203.13/31.52)
+|   |   |   fami_estratovivienda = SinEstrato: Bajo (31.96/8.83)
+|   |   cole_jornada = MAÑANA
+|   |   |   cole_area_ubicacion = RURAL: Bajo (1458.53/383.65)
+|   |   |   cole_area_ubicacion = URBANO
+|   |   |   |   estu_genero = F: Bajo (4909.44/1823.33)
+|   |   |   |   estu_genero = M
+|   |   |   |   |   fami_cuartoshogar = Cinco: Bajo (266.9/129.2)
+|   |   |   |   |   fami_cuartoshogar = Cuatro: Bajo (976.85/438.02)
+|   |   |   |   |   fami_cuartoshogar = Dos: Alto (1893.42/899.68)
+|   |   |   |   |   fami_cuartoshogar = Seis o mas: Bajo (167.96/63.9)
+|   |   |   |   |   fami_cuartoshogar = Tres: Alto (2639.73/1255.62)
+|   |   |   |   |   fami_cuartoshogar = Uno: Bajo (207.63/101.83)
+|   |   cole_jornada = NOCHE: Bajo (2377.48/576.6)
+|   |   cole_jornada = SABATINA: Bajo (2752.6/744.31)
+|   |   cole_jornada = TARDE: Bajo (3763.39/1606.51)
+|   |   cole_jornada = UNICA
+|   |   |   estu_genero = F: Bajo (4043.58/1546.46)
+|   |   |   estu_genero = M
+|   |   |   |   fami_estratovivienda = E1: Bajo (928.63/432.78)
+|   |   |   |   fami_estratovivienda = E2: Alto (1996.17/961.48)
+|   |   |   |   fami_estratovivienda = E3: Alto (1383.96/642.93)
+|   |   |   |   fami_estratovivienda = E4: Bajo (266.65/128.65)
+|   |   |   |   fami_estratovivienda = E5: Bajo (66.76/23.1)
+|   |   |   |   fami_estratovivienda = E6: Bajo (25.21/8.63)
+|   |   |   |   fami_estratovivienda = SinEstrato: Bajo (96.8/23.24)
+|   edad = 19-20: Bajo (12732.67/3921.3)
+|   edad = <=16
+|   |   cole_naturaleza = NO OFICIAL
+|   |   |   cole_jornada = COMPLETA: Alto (28895.02/3274.45)
+|   |   |   cole_jornada = MAÑANA: Alto (14880.25/3262.85)
+|   |   |   cole_jornada = NOCHE: Bajo (408.5/129.21)
+|   |   |   cole_jornada = SABATINA: Bajo (831.91/300.28)
+|   |   |   cole_jornada = TARDE: Alto (1238.89/454.43)
+|   |   |   cole_jornada = UNICA: Alto (2498.52/408.53)
+|   |   cole_naturaleza = OFICIAL
+|   |   |   cole_area_ubicacion = RURAL
+|   |   |   |   cole_depto_ubicacion = AMAZONAS: Bajo (11.53/1.0)
+|   |   |   |   cole_depto_ubicacion = ANTIOQUIA: Bajo (1840.46/825.58)
+|   |   |   |   cole_depto_ubicacion = ARAUCA: Alto (94.88/43.6)
+|   |   |   |   cole_depto_ubicacion = ATLANTICO: Bajo (145.1/43.53)
+|   |   |   |   cole_depto_ubicacion = BOGOTÁ: Alto (142.67/61.07)
+|   |   |   |   cole_depto_ubicacion = BOLIVAR: Bajo (464.58/110.76)
+|   |   |   |   cole_depto_ubicacion = BOYACA: Alto (325.31/126.15)
+|   |   |   |   cole_depto_ubicacion = CALDAS: Bajo (258.29/118.28)
+|   |   |   |   cole_depto_ubicacion = CAQUETA: Bajo (62.67/22.53)
+|   |   |   |   cole_depto_ubicacion = CASANARE: Alto (124.22/59.34)
+|   |   |   |   cole_depto_ubicacion = CAUCA: Bajo (741.33/238.24)
+|   |   |   |   cole_depto_ubicacion = CESAR: Bajo (258.77/105.41)
+|   |   |   |   cole_depto_ubicacion = CHOCO: Bajo (98.33/7.0)
+|   |   |   |   cole_depto_ubicacion = CORDOBA: Bajo (619.18/236.79)
+|   |   |   |   cole_depto_ubicacion = CUNDINAMARCA: Alto (1245.9/395.55)
+|   |   |   |   cole_depto_ubicacion = GUAINIA: Alto (2.0/1.0)
+|   |   |   |   cole_depto_ubicacion = GUAVIARE: Bajo (34.64/12.07)
+|   |   |   |   cole_depto_ubicacion = HUILA: Alto (562.58/255.5)
+|   |   |   |   cole_depto_ubicacion = LA GUAJIRA: Bajo (154.17/36.67)
+|   |   |   |   cole_depto_ubicacion = MAGDALENA: Bajo (423.46/124.28)
+|   |   |   |   cole_depto_ubicacion = META: Alto (412.19/148.71)
+|   |   |   |   cole_depto_ubicacion = NARIÑO: Alto (498.36/215.98)
+|   |   |   |   cole_depto_ubicacion = NORTE SANTANDER: Alto (164.88/73.74)
+|   |   |   |   cole_depto_ubicacion = PUTUMAYO: Bajo (186.29/68.21)
+|   |   |   |   cole_depto_ubicacion = QUINDIO: Alto (129.67/30.0)
+|   |   |   |   cole_depto_ubicacion = RISARALDA: Bajo (185.88/91.07)
+|   |   |   |   cole_depto_ubicacion = SAN ANDRES: Bajo (73.74/17.07)
+|   |   |   |   cole_depto_ubicacion = SANTANDER: Alto (543.65/188.69)
+|   |   |   |   cole_depto_ubicacion = SUCRE: Bajo (212.86/70.81)
+|   |   |   |   cole_depto_ubicacion = TOLIMA: Bajo (455.65/172.28)
+|   |   |   |   cole_depto_ubicacion = VALLE: Alto (996.27/459.5)
+|   |   |   |   cole_depto_ubicacion = VAUPES: Bajo (5.0)
+|   |   |   |   cole_depto_ubicacion = VICHADA: Bajo (9.0/3.0)
+|   |   |   cole_area_ubicacion = URBANO: Alto (83384.57/27475.08)
+|   edad = >20: Bajo (5061.23/690.92)
+
+Number of Leaves  : 	394
+
+Size of the tree : 	438
+
+
+Time taken to build model: 5.13 seconds
+
+Time taken to test model on training data: 2.4 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances      363022               68.3896 %
+Incorrectly Classified Instances    167793               31.6104 %
+Kappa statistic                          0.3678
+Mean absolute error                      0.4102
+Root mean squared error                  0.4524
+Relative absolute error                 82.0404 %
+Root relative squared error             90.4886 %
+Total Number of Instances           530815     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.691    0.323    0.679      0.691    0.685      0.368    0.744     0.724     Alto
+                 0.677    0.309    0.689      0.677    0.683      0.368    0.744     0.725     Bajo
+Weighted Avg.    0.684    0.316    0.684      0.684    0.684      0.368    0.744     0.725     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 182492  81601 |      a = Alto
+  86192 180530 |      b = Bajo
+
+Time taken to perform cross-validation: 56.7 seconds
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances      361940               68.1857 %
+Incorrectly Classified Instances    168875               31.8143 %
+Kappa statistic                          0.3637
+Mean absolute error                      0.412 
+Root mean squared error                  0.4537
+Relative absolute error                 82.4039 %
+Root relative squared error             90.7372 %
+Total Number of Instances           530815     
+
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.687    0.323    0.678      0.687    0.682      0.364    0.741     0.728     Alto
+                 0.677    0.313    0.686      0.677    0.681      0.364    0.741     0.726     Bajo
+Weighted Avg.    0.682    0.318    0.682      0.682    0.682      0.364    0.741     0.727     
+
+
+=== Confusion Matrix ===
+
+      a      b   <-- classified as
+ 181497  82596 |      a = Alto
+  86279 180443 |      b = Bajo
+

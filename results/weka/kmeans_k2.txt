@@ -1,0 +1,60 @@
+
+
+=== Clustering stats for training data ===
+
+
+kMeans
+======
+
+Number of iterations: 3
+Within cluster sum of squared errors: 3198180.0
+
+Initial starting points (random):
+
+Cluster 0: F,17,SinEstrato,Secundaria,Secundaria,Si,Si,Si,Si,'5 a 6',Cinco,OFICIAL,RURAL,UNICA,N,TÉCNICO/ACADÉMICO,MIXTO
+Cluster 1: M,18,E2,ProfesionalInc,Secundaria,No,Si,No,Si,'3 a 4',Tres,OFICIAL,RURAL,TARDE,N,TÉCNICO/ACADÉMICO,MIXTO
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                    Cluster#
+Attribute               Full Data          0          1
+                       (530815.0) (316521.0) (214294.0)
+=======================================================
+estu_genero                     F          F          M
+edad                         <=16       <=16       <=16
+fami_estratovivienda           E2         E2         E2
+fami_educacionmadre    Secundaria Secundaria Secundaria
+fami_educacionpadre      Primaria   Primaria   Primaria
+fami_tieneinternet             Si         Si         Si
+fami_tienecomputador           Si         Si         No
+fami_tieneautomovil            No         No         No
+fami_tienelavadora             Si         Si         Si
+fami_personashogar          3 a 4      3 a 4      3 a 4
+fami_cuartoshogar            Tres        Dos       Tres
+cole_naturaleza           OFICIAL    OFICIAL    OFICIAL
+cole_area_ubicacion        URBANO     URBANO     URBANO
+cole_jornada               MAÑANA     MAÑANA     MAÑANA
+cole_bilingue                   N          N          N
+cole_caracter           ACADÉMICO  ACADÉMICO  ACADÉMICO
+cole_genero                 MIXTO      MIXTO      MIXTO
+
+
+Clustered Instances
+
+0      316521 ( 60%)
+1      214294 ( 40%)
+
+
+Class attribute: desempeno
+Classes to Clusters:
+
+      0      1  <-- assigned to cluster
+ 165162  98931 | Alto
+ 151359 115363 | Bajo
+
+Cluster 0 <-- Alto
+Cluster 1 <-- Bajo
+
+Incorrectly clustered instances :	250290.0	 47.152  %
+

@@ -1,0 +1,83 @@
+
+
+=== Clustering stats for training data ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 3757675.0
+
+Initial starting points (random):
+
+Cluster 0: F,18,E2,Secundaria,Secundaria,'0 A 10 LIBROS',Si,Si,No,Si,'3 a 4',Dos,0,'Todos o casi todos los días',OFICIAL,URBANA,MAÑANA,N,ACADÉMICO,MIXTO,NSE2,IPM>50
+Cluster 1: F,<=16,E4,Posgrado,Posgrado,'11 A 25 LIBROS',Si,Si,Si,Si,'1 a 2',Cuatro,'Menos de 10 horas','3 a 5 veces por semana','NO OFICIAL',URBANA,COMPLETA,N,ACADÉMICO,MIXTO,NSE3,IPM20-35
+Cluster 2: M,<=16,E2,Tecnica,Tecnica,'26 A 100 LIBROS',Si,Si,No,Si,'3 a 4',Tres,'Entre 21 y 30 horas','3 a 5 veces por semana','NO OFICIAL',RURAL,COMPLETA,N,TÉCNICO,MIXTO,NSE2,IPM35-50
+Cluster 3: M,18,E2,SecundariaInc,Secundaria,'0 A 10 LIBROS',Si,No,No,Si,'3 a 4',Dos,'Más de 30 horas','3 a 5 veces por semana',OFICIAL,URBANA,UNICA,N,ACADÉMICO,MIXTO,NSE3,IPM<20
+Cluster 4: M,17,E4,SecundariaInc,SecundariaInc,'0 A 10 LIBROS',No,No,No,No,'3 a 4',Dos,'Entre 11 y 20 horas','1 o 2 veces por semana',OFICIAL,URBANA,UNICA,N,TÉCNICO/ACADÉMICO,MASCULINO,NSE2,IPM>50
+Cluster 5: M,17,E2,Secundaria,Secundaria,'0 A 10 LIBROS',Si,Si,No,Si,'3 a 4',Dos,0,'Todos o casi todos los días',OFICIAL,RURAL,MAÑANA,N,ACADÉMICO,MIXTO,NSE2,IPM<20
+Cluster 6: M,<=16,E1,Secundaria,Secundaria,'26 A 100 LIBROS',Si,No,No,Si,'3 a 4',Dos,0,'Nunca o rara vez comemos eso',OFICIAL,RURAL,MAÑANA,N,ACADÉMICO,MIXTO,NSE2,IPM35-50
+Cluster 7: F,<=16,E2,SecundariaInc,Primaria,'0 A 10 LIBROS',Si,Si,No,Si,'5 a 6',Tres,'Menos de 10 horas','Todos o casi todos los días',OFICIAL,URBANA,UNICA,N,TÉCNICO/ACADÉMICO,MIXTO,NSE2,IPM<20
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                                               Cluster#
+Attribute                                         Full Data                           0                           1                           2                           3                           4                           5                           6                           7
+                                                 (561049.0)                  (146017.0)                   (86360.0)                   (34508.0)                   (87117.0)                   (63860.0)                   (53513.0)                   (42410.0)                   (47264.0)
+===========================================================================================================================================================================================================================================================================================
+estu_genero                                               F                           F                           F                           M                           M                           F                           M                           M                           F
+edad                                                   <=16                        <=16                        <=16                        <=16                        <=16                          17                          17                        <=16                        <=16
+fami_estratovivienda                                     E2                          E2                          E3                          E2                          E2                          E1                          E2                          E1                          E2
+fami_educacionmadre                              Secundaria                  Secundaria                 Profesional                     Tecnica                  Secundaria                    Primaria                  Secundaria                  Secundaria                  Secundaria
+fami_educacionpadre                              Secundaria                  Secundaria                 Profesional                     Tecnica                  Secundaria                    Primaria                  Secundaria                  Secundaria                    Primaria
+fami_numlibros                                0 A 10 LIBROS               0 A 10 LIBROS              11 A 25 LIBROS             26 A 100 LIBROS               0 A 10 LIBROS               0 A 10 LIBROS               0 A 10 LIBROS               0 A 10 LIBROS               0 A 10 LIBROS
+fami_tieneinternet                                       Si                          Si                          Si                          Si                          Si                          No                          Si                          Si                          Si
+fami_tienecomputador                                     Si                          Si                          Si                          Si                          No                          No                          Si                          No                          Si
+fami_tieneautomovil                                      No                          No                          Si                          No                          No                          No                          No                          No                          No
+fami_tienelavadora                                       Si                          Si                          Si                          Si                          Si                          No                          Si                          Si                          Si
+fami_personashogar                                    3 a 4                       3 a 4                       3 a 4                       3 a 4                       3 a 4                       3 a 4                       3 a 4                       3 a 4                       5 a 6
+fami_cuartoshogar                                       Dos                         Dos                        Tres                        Tres                         Dos                         Dos                         Dos                         Dos                        Tres
+estu_horassemanatrabaja                                   0                           0                           0                           0                           0                           0                           0                           0                           0
+fami_comecarnepescadohuevo      Todos o casi todos los días Todos o casi todos los días Todos o casi todos los días      3 a 5 veces por semana      3 a 5 veces por semana      1 o 2 veces por semana Todos o casi todos los días      1 o 2 veces por semana Todos o casi todos los días
+cole_naturaleza                                     OFICIAL                     OFICIAL                  NO OFICIAL                  NO OFICIAL                     OFICIAL                     OFICIAL                     OFICIAL                     OFICIAL                     OFICIAL
+cole_area_ubicacion                                  URBANA                      URBANA                      URBANA                      URBANA                      URBANA                      URBANA                      URBANA                       RURAL                      URBANA
+cole_jornada                                         MAÑANA                      MAÑANA                    COMPLETA                    COMPLETA                       UNICA                       UNICA                      MAÑANA                      MAÑANA                       UNICA
+cole_bilingue                                             N                           N                           N                           N                           N                           N                           N                           N                           N
+cole_caracter                                     ACADÉMICO                   ACADÉMICO                   ACADÉMICO                   ACADÉMICO                   ACADÉMICO           TÉCNICO/ACADÉMICO                   ACADÉMICO                   ACADÉMICO           TÉCNICO/ACADÉMICO
+cole_genero                                           MIXTO                       MIXTO                       MIXTO                       MIXTO                       MIXTO                       MIXTO                       MIXTO                       MIXTO                       MIXTO
+nse_colegio                                            NSE2                        NSE2                        NSE3                        NSE3                        NSE3                        NSE2                        NSE2                        NSE2                        NSE2
+ipm_mpio_nivel                                       IPM<20                      IPM<20                      IPM<20                      IPM<20                      IPM<20                      IPM>50                      IPM<20                    IPM35-50                      IPM<20
+
+
+Clustered Instances
+
+0      146017 ( 26%)
+1       86360 ( 15%)
+2       34508 (  6%)
+3       87117 ( 16%)
+4       63860 ( 11%)
+5       53513 ( 10%)
+6       42410 (  8%)
+7       47264 (  8%)
+
+
+Class attribute: desempeno
+Classes to Clusters:
+
+     0     1     2     3     4     5     6     7  <-- assigned to cluster
+ 65738 65441 23506 46508 19021 23348 14543 21551 | Alto
+ 80279 20919 11002 40609 44839 30165 27867 25713 | Bajo
+
+Cluster 0 <-- Bajo
+Cluster 1 <-- Alto
+Cluster 2 <-- No class
+Cluster 3 <-- No class
+Cluster 4 <-- No class
+Cluster 5 <-- No class
+Cluster 6 <-- No class
+Cluster 7 <-- No class
+
+Incorrectly clustered instances :	415329.0	 74.0272 %
+

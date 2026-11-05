@@ -1,0 +1,62 @@
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 49 desempeno):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.0989948   48 col_computador_nivel
+ 0.0949525   44 nse_colegio
+ 0.062341    39 cole_jornada
+ 0.0448492   17 fami_educacionmadre
+ 0.0437422    2 edad
+ 0.0418108   46 ipm_mpio_nivel
+ 0.0370346   18 fami_educacionpadre
+ 0.0331443   27 fami_tienecomputador
+ 0.0301526   45 cole_depto_ubicacion
+ 0.0245381    6 estu_comunidadcampesina
+ 0.0233838   24 fami_numlibros
+ 0.0229986   13 estu_dedicacioninternet
+ 0.0207321   19 fami_trabajolabormadre
+ 0.0199437   20 fami_trabajolaborpadre
+ 0.0198806   37 cole_naturaleza
+ 0.019427    23 fami_numhermanos
+ 0.0181954   26 fami_tieneinternet
+ 0.0181771   36 fami_comelechederivados
+ 0.0156689    4 estu_grupoetnia
+ 0.0152916    9 estu_horassemanatrabaja
+ 0.0150657   38 cole_area_ubicacion
+ 0.0127442   34 fami_comecarnepescadohuevo
+ 0.0123232   16 fami_estratovivienda
+ 0.0120627   28 fami_tieneautomovil
+ 0.0109049   43 cole_calendario
+ 0.0106099   35 fami_comecerealfrutoslegumbre
+ 0.0094298   30 fami_tieneconsolavideojuegos
+ 0.0086472   12 estu_dedicacionlecturadiaria
+ 0.008489    29 fami_tienelavadora
+ 0.0083993   31 fami_tienehornomicroogas
+ 0.0070641   42 cole_genero
+ 0.0069788   21 fami_personashogar
+ 0.0069736   15 estu_desplazacolegio
+ 0.0058926   25 fami_situacioneconomica
+ 0.0055691   11 estu_tiporemuneracion
+ 0.0055139    7 estu_numhijos
+ 0.0046129   10 estu_horastrabnoremu
+ 0.0036626   33 fami_tieneserviciotv
+ 0.0035121    1 estu_genero
+ 0.003239    22 fami_cuartoshogar
+ 0.0028583   32 fami_tienemotocicleta
+ 0.0013416   47 col_tamano_nivel
+ 0.0011373   41 cole_caracter
+ 0.0007477   40 cole_bilingue
+ 0.0007181    3 nacionalidad
+ 0.0002646   14 estu_tiempocasaacole
+ 0.0000839    8 repite_examen
+ 0.0000575    5 estu_discapacidad
+
+Selected attributes: 48,44,39,17,2,46,18,27,45,6,24,13,19,20,37,23,26,36,4,9,38,34,16,28,43,35,30,12,29,31,42,21,15,25,11,7,10,33,1,22,32,47,41,40,3,14,8,5 : 48
+
