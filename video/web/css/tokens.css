@@ -1,0 +1,73 @@
+/* Tokens del sistema "hoja de respuestas". Ver video/web/DISENO.md. */
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/archivo-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url("../assets/fonts/archivo-var-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  /* Color base */
+  --papel: #f4f6f3;
+  --grafito: #24272b;
+  --tinta: #2c7f6e;
+  --tinta-clara: #cfe3dc;
+  --lapiz: #5f646a;
+  --alerta: #a33b2f;
+  --blanco: #ffffff;
+
+  /* Colores de los grupos, iguales a las figuras del informe */
+  --c1: #c0504d;
+  --c2: #f79646;
+  --c3: #4f81bd;
+  --c4: #1f4e79;
+
+  /* Unidad: 1 % del ancho de la diapositiva 16:9 que cabe en la ventana */
+  --u: min(1vw, calc(100vh * 16 / 9 / 100));
+
+  /* Tipografía: Archivo, una familia con tres anchos */
+  --familia: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --ancho-titulo: 112%;
+  --ancho-cifra: 75%;
+  --ancho-texto: 100%;
+
+  --fs-portada: calc(var(--u) * 4.6);
+  --fs-titulo: calc(var(--u) * 3.1);
+  --fs-cifra: calc(var(--u) * 4.4);
+  --fs-cifra-chica: calc(var(--u) * 3);
+  --fs-medio: calc(var(--u) * 2.1);
+  --fs-cuerpo: calc(var(--u) * 1.55);
+  --fs-tabla: calc(var(--u) * 1.35);
+  --fs-nota: calc(var(--u) * 1.1);
+
+  /* Trazo y espacio */
+  --trazo: max(1.5px, calc(var(--u) * 0.12));
+  --esp-1: calc(var(--u) * 0.5);
+  --esp-2: calc(var(--u) * 1);
+  --esp-3: calc(var(--u) * 1.6);
+  --esp-4: calc(var(--u) * 2.6);
+  --esp-5: calc(var(--u) * 4);
+
+  /* Movimiento */
+  --dur-cambio: 160ms;
+  --dur-barra: 700ms;
+  --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --u: 2.4vw;
+  }
+}

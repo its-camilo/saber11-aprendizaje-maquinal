@@ -1,0 +1,98 @@
+/*
+ * Impresión y exportación a PDF: una diapositiva por página 16:9 (1280 × 720 px).
+ * html.imprimiendo aplica el mismo layout en pantalla un instante antes de
+ * imprimir, para que el 3D se pueda fotografiar con el tamaño final.
+ */
+
+@page {
+  size: 1280px 720px;
+  margin: 0;
+}
+
+@media print {
+  :root {
+    --u: 12.8px;
+  }
+
+  html,
+  body {
+    height: auto;
+    background: var(--papel);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .escenario {
+    display: block;
+    min-height: 0;
+  }
+
+  .mazo {
+    width: 1280px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .diapositiva,
+  .diapositiva[hidden] {
+    position: relative;
+    display: grid !important;
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    break-after: page;
+    break-inside: avoid;
+  }
+
+  .diapositiva:last-child {
+    break-after: auto;
+  }
+
+  body > :not(.escenario),
+  .controles,
+  .saltar,
+  .escena__pie .boton,
+  [data-recorrer],
+  [data-repetir-comparacion] {
+    display: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .etiqueta3d {
+    opacity: 1;
+  }
+
+  .escena__canvas {
+    display: none;
+  }
+
+  .escena__instantanea {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+html.imprimiendo {
+  --u: 12.8px;
+}
+
+html.imprimiendo .mazo {
+  width: 1280px;
+  height: auto;
+}
+
+html.imprimiendo .diapositiva,
+html.imprimiendo .diapositiva[hidden] {
+  position: relative;
+  display: grid !important;
+  width: 1280px;
+  height: 720px;
+}
