@@ -1,0 +1,23 @@
+variable,grupo_a,media_a,grupo_b,media_b,brecha,n_total
+fami_tienecomputador,Si,272.8,No,242.6,30.2,561049
+cole_naturaleza,NO OFICIAL,278.0,OFICIAL,250.3,27.7,561049
+cole_area_ubicacion,URBANA,261.5,RURAL,237.6,23.9,561049
+estu_genero,M,262.2,F,253.3,8.9,561049
+ipm_municipio,IPM<20,268.1,,,,314642
+ipm_municipio,IPM20-35,258.8,,,,103858
+ipm_municipio,IPM35-50,240.1,,,,81032
+ipm_municipio,IPM>50,223.8,,,,61409
+fami_numlibros,0 A 10 LIBROS,248.8,,,,247478
+fami_numlibros,11 A 25 LIBROS,261.8,,,,145218
+fami_numlibros,26 A 100 LIBROS,284.2,,,,80531
+fami_numlibros,MÁS DE 100 LIBROS,291.0,,,,20170
+estu_horassemanatrabaja,0,266.8,,,,296125
+estu_horassemanatrabaja,Entre 11 y 20 horas,247.4,,,,55282
+estu_horassemanatrabaja,Entre 21 y 30 horas,244.1,,,,19131
+estu_horassemanatrabaja,Menos de 10 horas,246.2,,,,119557
+estu_horassemanatrabaja,Más de 30 horas,232.8,,,,17718
+estu_dedicacionlecturadiaria,30 minutos o menos,254.1,,,,186274
+estu_dedicacionlecturadiaria,Entre 1 y 2 horas,269.2,,,,42073
+estu_dedicacionlecturadiaria,Entre 30 y 60 minutos,268.0,,,,117939
+estu_dedicacionlecturadiaria,Más de 2 horas,276.0,,,,18085
+estu_dedicacionlecturadiaria,No leo por entretenimiento,252.7,,,,130860

@@ -1,11 +1,13 @@
 # Microdatos ICFES (acceso restringido DataIcfes / pesados): no se versionan
-data/2025/*.txt
-data/2025/*.pdf
-data/*.csv
 *.arff
-weka-3-8-6/
-jdk*/
-__pycache__/
 *.aux
 *.log
 *.out
+__pycache__/
+data/*.csv
+data/*.txt
+data/2025/
+data/2025/*.pdf
+data/2025/*.txt
+jdk*/
+weka-3-8-6/

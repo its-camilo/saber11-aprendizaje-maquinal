@@ -22,18 +22,30 @@ Resultados principales (2025):
 - LinUCB reduce el arrepentimiento **14,6 %** frente al azar (2022: 12,3 %) y prioriza inglés en colegios oficiales, rurales y de municipios pobres.
 
 ## Cómo reproducir (2025)
-Desde la raíz del repositorio:
-1. Descargar los microdatos `Examen_Saber_11_20251*.txt` y `Examen_Saber_11_20252*.txt` de DataIcfes (requiere registro) en `data/2025/`. **No se incluyen** por los términos de acceso y su tamaño (~450 MB).
-2. Descargar [Weka 3.8.6](https://waikato.github.io/weka-wiki/downloading_weka/) en `weka-3-8-6/`.
-3. Ejecutar:
+Desde la raíz del repositorio.
+
+**Entorno necesario:** Python 3.12 con pandas, numpy, scikit-learn, matplotlib y openpyxl; Java 11+ (con Java 21 el script ya incluye `--add-opens`); Weka 3.8.6; TeX Live con `pdflatex` para recompilar el informe (el archivo `informe/IEEEtran.cls` ya viene en el repo).
+
+**Datos (no se suben a GitHub):**
+- Microdatos 2025 de DataIcfes (acceso con registro): `Examen_Saber_11_20251-04e513b9.txt` (85.678 filas, 85 columnas) y `Examen_Saber_11_20252-7e5d0882.txt` (576.213 filas, 92 columnas) en `data/2025/`, junto con el diccionario en `data/2025/diccionario_saber11.pdf`. Verificar con SHA-256: `d4f902d9a47233a7549ff8d411618bebea2626b820476c31bfa8e18efb2ee484` (20251) y `f0084bf19b9c980d90f350be5567eb83fea34118ad1db924dd9c3d9adc06b039` (20252). El `.gitignore` ya excluye `data/2025/`, `data/*.csv`, `data/*.txt` y `*.arff`: **nunca** hacer commit de los microdatos.
+- Datos abiertos 2022 (Socrata, `kgxf-xxbe`, periodo 20224) en `data/p_0.csv`, `data/p_400000.csv` y `data/p_800000.csv` (1.065.888 filas en total).
+- El IPM municipal del DANE 2018 ya está en `data/externos/ipm_municipal_2018.xlsx` (público).
+
+**Orden del pipeline** (no correr 02 y 03 a la vez; 02 pide `-Xmx6g`, así que se necesitan ~6 GB libres, si no, bajar a `-Xmx4g` en `code/2025/02_weka.sh`):
 ```bash
 python3 code/2025/01_preprocesar.py     # limpieza + cruces -> data/2025/*.arff, colegios.csv  (~1 min)
 bash    code/2025/02_weka.sh            # InfoGain, ZeroR, J48, K-means (necesita ~6 GB; JAVA=/ruta/java opcional)
 python3 code/2025/05_perfil_grupos.py   # perfiles de grupos, estabilidad (ARI), regresión de colegios
 python3 code/2025/03_bandit.py          # bandit contextual (~9 min). No correr a la vez que Weka.
 python3 code/2025/04_figuras.py         # figuras del informe
-cd informe && pdflatex informe.tex
+python3 code/2025/verificar_brechas.py  # verifica conteos y brechas contra los microdatos -> results/2025/brechas.csv
 ```
+
+**Recompilar el informe** (IEEE, 5 páginas):
+```bash
+cd informe && pdflatex informe.tex && pdflatex informe.tex   # dos pasadas para las referencias
+```
+
 Requisitos: Python 3 con pandas, numpy, scikit-learn, matplotlib, openpyxl; Java 11+ (con Java 21 se usa `--add-opens`, ya incluido).
 
 ## Versión anterior: Saber 11 2022 (calendario A)
