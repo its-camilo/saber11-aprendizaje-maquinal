@@ -5,7 +5,10 @@
  *
  * Uso (desde la raíz del repo):
  *   NODE_PATH=/ruta/a/node_modules node video/web/tools/exportar.cjs pdf
- *   NODE_PATH=/ruta/a/node_modules node video/web/tools/exportar.cjs capturas [carpeta]
+ *   NODE_PATH=/ruta/a/node_modules node video/web/tools/exportar.cjs capturas <carpeta> [ancho]
+ *
+ * "capturas" guarda una PNG por diapositiva con el ancho de ventana pedido
+ * (1280 por defecto; 1920, 1024 y 390 tienen alto propio).
  *
  * Requiere el paquete "playwright" con su Chromium instalado
  * (npx playwright install chromium), o la variable CHROMIUM_PATH apuntando
@@ -26,10 +29,18 @@ const TOTAL = 9;
 
 const ARGS_WEBGL = ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"];
 
+// Vistas para revisar el diseño responsive: portátil, tablet y móvil.
+const VISTAS = {
+  1920: { ancho: 1920, alto: 1080 },
+  1024: { ancho: 1024, alto: 768 },
+  390: { ancho: 390, alto: 844 },
+};
+
 async function abrir(navegador, opciones = {}) {
+  const vista = opciones.vista || { ancho: ANCHO, alto: ALTO };
   const contexto = await navegador.newContext({
-    viewport: { width: ANCHO, height: ALTO },
-    deviceScaleFactor: 2,
+    viewport: { width: vista.ancho, height: vista.alto },
+    deviceScaleFactor: opciones.escala || 2,
     reducedMotion: opciones.reducedMotion || "reduce",
   });
   const pagina = await contexto.newPage();
@@ -58,28 +69,31 @@ async function exportarPdf(navegador) {
   console.log("PDF escrito en", PDF_SALIDA);
 }
 
-async function capturas(navegador, carpeta) {
+async function capturas(navegador, carpeta, ancho) {
   fs.mkdirSync(carpeta, { recursive: true });
-  const pagina = await abrir(navegador);
+  const vista = VISTAS[ancho] || { ancho, alto: Math.round((ancho * 9) / 16) };
+  const pagina = await abrir(navegador, { vista, escala: 1 });
   for (let n = 1; n <= TOTAL; n += 1) {
     await irA(pagina, n);
     await pagina.waitForTimeout(400);
-    const archivo = path.join(carpeta, `diapositiva-${n}.png`);
+    const archivo = path.join(carpeta, `diapositiva-${ancho}-${n}.png`);
     await pagina.screenshot({ path: archivo });
     console.log("Captura", archivo);
   }
 }
 
 async function principal() {
-  const [modo = "pdf", carpeta = "/tmp/capturas-saber11"] = process.argv.slice(2);
+  const [modo = "pdf", carpeta, ancho = "1280"] = process.argv.slice(2);
   const navegador = await chromium.launch({
     args: ARGS_WEBGL,
     executablePath: process.env.CHROMIUM_PATH || undefined, // p. ej. ~/.cache/ms-playwright/chromium-1254/chrome-linux64/chrome
   });
   try {
     if (modo === "pdf") await exportarPdf(navegador);
-    else if (modo === "capturas") await capturas(navegador, path.resolve(carpeta));
-    else throw new Error(`Modo desconocido "${modo}". Use "pdf" o "capturas".`);
+    else if (modo === "capturas") {
+      if (!carpeta) throw new Error("Falta la carpeta de destino: capturas <carpeta> [ancho]");
+      await capturas(navegador, path.resolve(carpeta), Number(ancho));
+    } else throw new Error(`Modo desconocido "${modo}". Use "pdf" o "capturas".`);
   } finally {
     await navegador.close();
   }

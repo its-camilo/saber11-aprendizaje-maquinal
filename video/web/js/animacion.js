@@ -1,7 +1,7 @@
 /*
  * Utilidades de movimiento compartidas por todos los módulos animados:
  * curva de suavizado, interpolación por cuadros que respeta
- * prefers-reduced-motion y reinicio de animaciones CSS.
+ * prefers-reduced-motion y coreografías que se cancelan juntas.
  * Ningún módulo debe llamar a requestAnimationFrame por su cuenta.
  */
 (function (Saber) {
@@ -53,13 +53,5 @@
     };
   }
 
-  /* Reinicia una animación CSS quitando y volviendo a poner su clase. */
-  function reiniciarClase(elemento, clase) {
-    elemento.classList.remove(clase);
-    if (Saber.entorno.prefiereMenosMovimiento()) return;
-    void elemento.offsetWidth; // fuerza un reflujo para reiniciar la animación
-    elemento.classList.add(clase);
-  }
-
-  Saber.animacion = { facilidad, animar, crearCoreografia, reiniciarClase };
+  Saber.animacion = { facilidad, animar, crearCoreografia };
 })((window.Saber = window.Saber || {}));

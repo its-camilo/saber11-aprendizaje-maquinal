@@ -1,4 +1,4 @@
-/* Base: reinicio, escenario 16:9, controles, foco y utilidades. */
+/* Base: reinicio, escenario 16:9, contador, foco y utilidades. */
 
 *,
 *::before,
@@ -70,20 +70,6 @@ button {
   white-space: nowrap;
 }
 
-.saltar {
-  position: absolute;
-  left: var(--esp-2);
-  top: -10em;
-  z-index: 10;
-  padding: var(--esp-1) var(--esp-2);
-  background: var(--blanco);
-  border: var(--trazo) solid var(--tinta);
-}
-
-.saltar:focus {
-  top: var(--esp-2);
-}
-
 /* ---------- escenario ---------- */
 
 .escenario {
@@ -104,8 +90,19 @@ button {
   padding: var(--esp-5);
 }
 
-/* ---------- botones ---------- */
+/* Contador "N de 9": texto, no control. Sale en pantallas angostas, donde el pie ya lo muestra. */
+.controles {
+  position: fixed;
+  right: max(12px, calc((100vw - var(--u) * 100) / 2 + var(--esp-3)));
+  bottom: max(10px, calc((100vh - var(--u) * 56.25) / 2 + var(--esp-1)));
+  z-index: 5;
+  margin: 0;
+  color: var(--lapiz);
+  font-size: max(13px, var(--fs-nota));
+  pointer-events: none;
+}
 
+/* Botones de la presentación (solo los que quedan dentro de las diapositivas). */
 .boton {
   min-height: 44px;
   padding: 0 var(--esp-3);
@@ -119,46 +116,15 @@ button {
   transition: background-color var(--dur-cambio), color var(--dur-cambio);
 }
 
-.boton:hover:not(:disabled) {
+.boton:hover {
   background: var(--tinta-clara);
-}
-
-.boton:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.boton--principal {
-  background: var(--tinta);
-  color: var(--blanco);
-}
-
-.boton--principal:hover:not(:disabled) {
-  background: var(--grafito);
 }
 
 .boton--suave {
   min-height: 36px;
 }
 
-.controles {
-  position: fixed;
-  right: max(12px, calc((100vw - var(--u) * 100) / 2 + var(--esp-3)));
-  bottom: max(10px, calc((100vh - var(--u) * 56.25) / 2 + var(--esp-1)));
-  z-index: 5;
-  display: flex;
-  align-items: center;
-  gap: var(--esp-1);
-}
-
-.controles__contador {
-  min-width: 4.5em;
-  text-align: center;
-  color: var(--lapiz);
-  font-size: max(13px, var(--fs-nota));
-}
-
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .escenario {
     display: block;
   }
@@ -170,13 +136,7 @@ button {
   }
 
   .controles {
-    position: sticky;
-    right: auto;
-    bottom: 0;
-    justify-content: center;
-    padding: 8px;
-    background: var(--papel);
-    border-top: 1px solid var(--tinta-clara);
+    display: none;
   }
 }
 

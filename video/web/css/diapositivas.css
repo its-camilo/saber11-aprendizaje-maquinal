@@ -16,13 +16,37 @@
   display: none;
 }
 
-.diapositiva.es-actual {
-  animation: aparecer var(--dur-cambio) ease-out;
+.diapositiva:focus {
+  outline: none;
 }
 
-@keyframes aparecer {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Entrada: sube unos píxeles mientras aparece. Salida: se desvanece. */
+.diapositiva.es-actual {
+  animation: entrar var(--dur-entrada) var(--curva) both;
+}
+
+.diapositiva.saliendo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: salir var(--dur-salida) ease-in both;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes salir {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .diapositiva.es-actual,
+  .diapositiva.saliendo {
+    animation: none;
+  }
 }
 
 .diapositiva__cuerpo {
@@ -44,12 +68,13 @@
   font-size: var(--fs-nota);
 }
 
-/* Marcas de sincronización: posición en la presentación */
+/* Marcas de sincronización: posición en la presentación. Solo indicador visual. */
 .pista {
   grid-column: 1;
   grid-row: 1 / 3;
   display: flex;
   align-items: center;
+  pointer-events: none;
 }
 
 .pista ol {
@@ -63,9 +88,6 @@
   width: calc(var(--u) * 3.2);
   height: calc(var(--u) * 1.6);
   padding: calc(var(--u) * 0.45) 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
 .marca::before {
@@ -86,8 +108,14 @@
   background: var(--grafito);
 }
 
-.marca:hover::before {
-  width: calc(var(--u) * 2.9);
+.pie__ayuda {
+  margin-left: auto;
+}
+
+@media (max-width: 900px), (pointer: coarse) {
+  .pie__ayuda {
+    display: none;
+  }
 }
 
 /* ---------- tipografía ---------- */
@@ -517,7 +545,9 @@
 }
 
 .etiqueta3d--regla {
-  transform: translate(calc(-100% - var(--u) * 0.4), -50%);
+  transform: translate(calc(-100% - var(--u) * 0.8), -50%);
+  padding: 0 calc(var(--u) * 0.3);
+  background: rgb(244 246 243 / 0.85);
   color: var(--tinta);
   font-weight: 500;
 }
@@ -734,6 +764,11 @@
   stroke-linejoin: round;
 }
 
+/* La rama recta: su condición va a la derecha de la línea, no encima. */
+.arbolj48__svg .arbolj48__condicion--recta {
+  text-anchor: start;
+}
+
 .arbolj48__nodo rect {
   fill: var(--blanco);
   stroke: var(--tinta);
@@ -801,6 +836,7 @@
 .arbolj48__pie,
 .escena__pie {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: var(--esp-2);
@@ -891,20 +927,7 @@
   color: var(--blanco);
 }
 
-[data-brechas].animar .brecha__barra {
-  animation: crecer var(--dur-barra) var(--curva) both;
-  animation-delay: calc(var(--i) * 90ms + 120ms);
-}
-
-[data-brechas].animar .brecha__valor {
-  animation: aparecer 200ms ease-out both;
-  animation-delay: calc(var(--i) * 90ms + var(--dur-barra));
-}
-
-@keyframes crecer {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
+/* Las barras y sus valores se animan por JS (brechas.js): el CSS solo da el estado final. */
 
 /* ---------- 7 bandit ---------- */
 
@@ -1056,14 +1079,22 @@
   color: var(--tinta);
 }
 
-/* ---------- pantallas angostas: una columna con desplazamiento ---------- */
+/* ---------- pantallas angostas (≤ 900 px): una columna que crece con su contenido ---------- */
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
   .diapositiva {
     position: relative;
-    min-height: calc(100svh - 60px);
-    padding: var(--esp-3) var(--esp-2) var(--esp-2) 0;
+    min-height: 0;
+    padding: var(--esp-3) var(--esp-2) var(--esp-3) 0;
     grid-template-columns: calc(var(--u) * 4.4) 1fr;
+  }
+
+  /* La saliente se queda encima de la entrante mientras se desvanece, sin empujarla. */
+  .diapositiva.saliendo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .pista {
@@ -1071,22 +1102,35 @@
     padding-top: var(--esp-1);
   }
 
-  .rejilla,
+  .rejilla {
+    flex: none;
+    grid-template-columns: 1fr;
+  }
+
   .portada__creditos,
   .cruces {
     grid-template-columns: 1fr;
   }
 
   .escena__lienzo {
-    height: 62vw;
+    height: auto;
+    aspect-ratio: 16 / 10;
   }
 
-  .etiqueta3d--nombre {
-    display: none;
+  .arbolj48__condicion {
+    font-size: 24px;
   }
 
-  .etiqueta3d--cifra {
-    font-size: var(--fs-cuerpo);
+  .arbolj48__acierto {
+    font-size: 22px;
+  }
+
+  .arbolj48__sigue {
+    font-size: 18px;
+  }
+
+  .arbolj48__hoja {
+    font-size: 34px;
   }
 
   .brecha {
@@ -1102,3 +1146,14 @@
     height: auto;
   }
 }
+
+@media (max-width: 600px) {
+  .etiqueta3d--nombre {
+    display: none;
+  }
+
+  .etiqueta3d--cifra {
+    font-size: var(--fs-cuerpo);
+  }
+}
+

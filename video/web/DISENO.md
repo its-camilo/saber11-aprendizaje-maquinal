@@ -41,7 +41,7 @@ Probé el ejercicio que pide la skill: con un brief parecido (cualquier tema de 
 | Cifra gigante con etiqueta en la portada | Es el tratamiento de héroe por defecto. | La portada es un **ítem de la hoja de respuestas**: la pregunta del guion ("¿qué pesa más…?") con tres burbujas vacías: hogar, colegio, municipio. En la diapositiva 9 vuelve la misma pregunta con la burbuja "colegio" rellenada a lápiz. El hilo narrativo es la respuesta al ítem. |
 | Etiqueta ALL-CAPS sobre cada título | Cromo de plantilla. | Sin etiquetas sobre los títulos. La técnica se nombra dentro del título en frase normal ("K-means sobre 9.692 colegios"). |
 | Tarjetas iguales con sombra | Kit SaaS. | No hay tarjetas. Las cifras viven en **casillas de formulario**: recuadros con borde de tinta de 1,5 px, sin sombra ni radio, con la etiqueta pequeña dentro del recuadro como en un formulario impreso. Solo las burbujas son redondas, porque en la hoja también lo son. |
-| Barra de progreso arriba + "03 / 09" | Default. | Las hojas ópticas tienen **marcas de sincronización** (pequeños rectángulos negros en el borde) que el lector usa para ubicar cada fila. El borde izquierdo de cada diapositiva lleva 9 marcas: las vistas en grafito, la actual más larga. Son clicables y sirven de navegación. El número va como "Diapositiva 3 de 9". Aquí sí hay secuencia real (el orden del guion), así que numerar está justificado. |
+| Barra de progreso arriba + "03 / 09" | Default. | Las hojas ópticas tienen **marcas de sincronización** (pequeños rectángulos negros en el borde) que el lector usa para ubicar cada fila. El borde izquierdo de cada diapositiva lleva 9 marcas: las vistas en grafito, la actual más larga. Son solo un indicador visual: no reciben clic ni foco. El número va como "Diapositiva 3 de 9". Aquí sí hay secuencia real (el orden del guion), así que numerar está justificado. |
 | Grotesca geométrica genérica | Se usa en cualquier proyecto. | **Archivo** (Omnibus-Type, OFL), con eje de ancho variable 62–125 %. Los formularios impresos usan grotescas condensadas para caber en casillas; aquí el ancho es un recurso: títulos en ancho 112 % y peso 750, cifras en ancho 75 % y peso 800 con números tabulares, notas en ancho 100 %. Una sola familia, tres anchos con roles claros. Nada en monoespaciada. |
 | 3D girando solo | Movimiento decorativo. | Las columnas **suben una vez** al entrar a la diapositiva 3 (C1 a C4, en orden de puntaje) y luego quedan quietas. El expositor puede arrastrar para girar; eso es movimiento que responde a una acción. |
 | Animaciones de entrada en todas | Fade-and-slide genérico. | Entre diapositivas solo hay un fundido de 160 ms. Los dos únicos momentos animados son el 3D de la diapositiva 3 y las barras de brechas de la diapositiva 6, que crecen desde cero una sola vez. |
@@ -69,7 +69,7 @@ Al ensayar con el guion, las diapositivas repetían en pantalla lo que el exposi
 
 ### Movimiento nuevo
 
-Todo el movimiento se dispara con el evento `diapositiva:entrar` (al llegar por teclado, botón, marca o hash) y se repite cada vez que se vuelve a entrar. Ninguna animación corre en bucle. El HTML que pintan las plantillas ya es el estado final; los módulos solo ponen el estado inicial un instante y lo llevan al final, así que con `prefers-reduced-motion`, en el PDF o si falla un script, se ve el resultado completo.
+Todo el movimiento se dispara con el evento `diapositiva:entrar` (al llegar por teclado, deslizar, clic en el fondo o hash) y se repite cada vez que se vuelve a entrar. Ninguna animación corre en bucle. El HTML que pintan las plantillas ya es el estado final; los módulos solo ponen el estado inicial un instante y lo llevan al final, así que con `prefers-reduced-motion`, en el PDF o si falla un script, se ve el resultado completo.
 
 | Diapositiva | Qué se mueve | Disparo | Módulo |
 |---|---|---|---|
@@ -81,7 +81,7 @@ Todo el movimiento se dispara con el evento `diapositiva:entrar` (al llegar por 
 
 Decisión sobre el 3D: el árbol y la curva son planos por naturaleza, así que van en SVG; Three.js sigue solo en la diapositiva 3, donde la tercera dimensión codifica algo (base = número de colegios). La curva usa los puntos reales de `results/2025/bandit_curvas.npz` (los mismos de la figura 5 del informe), muestreados cada 20 mil estudiantes y guardados en `contenido.js`.
 
-Código: `js/animacion.js` es el único que llama a `requestAnimationFrame`. Da la curva de suavizado, `animar()` (que salta al final con movimiento reducido), `crearCoreografia()` para cancelar varias animaciones juntas al repetir, y `reiniciarClase()` para las animaciones CSS. `territorio3d.js` y `brechas.js` también pasan por ahí, así que no hay lógica de animación duplicada. `app.js` solo conecta cada tipo de diapositiva con su módulo y, antes de imprimir, llama a `mostrarFinal()` de todos.
+Código: `js/animacion.js` es el único que llama a `requestAnimationFrame`. Da la curva de suavizado, `animar()` (que salta al final con movimiento reducido) y `crearCoreografia()` para cancelar varias animaciones juntas al repetir. `territorio3d.js`, `brechas.js` (las barras de la 6 se animan por JS, no con clases CSS) y los demás módulos pasan por ahí, así que no hay lógica de animación duplicada. `app.js` solo conecta cada tipo de diapositiva con su módulo y, antes de imprimir, llama a `mostrarFinal()` de todos.
 
 ### Pulido
 
@@ -120,7 +120,9 @@ Escala modular aproximada de razón 1,5 (1,05 → 1,55 → 2,3 → 3,1 → 4,6),
 
 ### Layout
 
-Lienzo 16:9 fijo que escala con la ventana (en pantalla y en el PDF), con un margen izquierdo que lleva la pista de marcas de sincronización. Todo alineado a la izquierda sobre una rejilla de 12 columnas; nada centrado salvo la burbuja de la portada. En pantallas angostas (< 720 px) la diapositiva pasa a una columna con desplazamiento vertical.
+Lienzo 16:9 que escala con la ventana (en pantalla y en el PDF), con un margen izquierdo que lleva la pista de marcas de sincronización. Todo alineado a la izquierda sobre una rejilla de 12 columnas; nada centrado salvo la burbuja de la portada. El contador "N de 9" va como texto en la esquina inferior derecha. La navegación es solo con teclado (← → ↑ ↓, PageUp/PageDown, Home/End, barra espaciadora), con deslizar en táctil y con clic en el fondo; no hay botones. La portada y el pie muestran "Usa ← → para navegar" solo en escritorio.
+
+Pantallas de 900 px o menos (portátil pequeño, tablet y móvil): la diapositiva deja de ser un lienzo fijo y se apila en una columna que crece con su contenido (`--u` pasa a `clamp(8px, 2.4vw, 11px)`). El contador se oculta porque el pie ya dice "Diapositiva N de 9". El corte de 900 px está en `tokens.css`, `base.css` y `diapositivas.css`; las media queries no leen variables, así que hay que cambiarlo en los tres.
 
 Portada (1) y cierre (9), el ítem de la hoja:
 
@@ -133,7 +135,7 @@ Portada (1) y cierre (9), el ítem de la hoja:
 |▯ |   ( ) Hogar   ( ) Colegio   ( ) Municipio     |
 |▯ |                                               |
 |▯ | Camilo Lagos   Luis Peraza    UNAL 2026-2     |
-+--+--------------------------[Anterior][Siguiente]+
++--+-----------------------------------------------+
 ```
 
 Diapositiva 3, el momento 3D:
@@ -190,6 +192,22 @@ Las demás con figura del informe (4 y 6) usan la variante de dos columnas: text
 4. **El movimiento explica, no decora.** Hay movimiento en cinco diapositivas (3D de la 3, recorrido del árbol de la 5, barras de la 6, curva de la 7 y paso de 2022 a 2025 en la 8). Cada uno muestra cómo se llega al dato: crece, se recorre o cambia. Se dispara al entrar a la diapositiva (o con un botón en la 5 y la 8), se repite al volver y nunca corre en bucle. Con `prefers-reduced-motion`, en el PDF o sin JavaScript de animación, todo aparece en su estado final.
 5. **Ningún número nuevo.** Todo sale del informe, de `results/2025/brechas.csv`, de `results/2025/perfil_colegios_k4.csv` o, para la forma de la curva del bandit, de `results/2025/bandit_curvas.npz`. La única operación es la resta que ya hace el informe en las brechas. Los valores intermedios de la transición de la diapositiva 8 duran menos de 2 segundos y terminan en el texto exacto.
 6. **Menos texto en pantalla que en el guion.** Titular corto y una o dos cifras o frases por diapositiva; lo demás lo dice el expositor.
+
+## Pasada 4: navegación por teclado, transiciones y responsive
+
+Cambios sobre la pasada 3. Se verificaron con Chromium headless (`exportar.cjs capturas` a 1920, 1024 y 390 px, y una prueba de navegación, foco, movimiento reducido, deslizar y desbordes).
+
+- **Sin botones.** Se quitaron "Anterior" y "Siguiente", el enlace de salto a los controles y el CSS y JS que solo servían a esos elementos. La navegación es con ← → ↑ ↓, PageUp/PageDown, Home/End y la barra espaciadora. En táctil, un gesto horizontal de al menos 50 px (y más horizontal que vertical) pasa de diapositiva; un gesto sobre el lienzo 3D sigue girando la escena.
+- **Marcas sin interacción.** Las 9 marcas del borde son `span` decorativos (`aria-hidden`): sin clic, sin foco y sin `data-ir`.
+- **Pista de teclado.** "Usa ← → para navegar" aparece en el pie de la portada, solo en escritorio (oculta con ancho ≤ 900 px o puntero táctil) y nunca en el PDF.
+- **Contador.** "N de 9" queda como texto en la esquina inferior derecha de escritorio. En pantallas angostas el pie ya lo muestra, así que el contador se oculta.
+- **Foco.** Al cambiar de diapositiva con teclado, gesto o clic, el foco pasa a la `section` de la diapositiva activa (sin contorno visible, porque el anuncio `aria-live` ya la nombra). Así no se pierde el foco al ocultarse el botón o enlace que lo tenía.
+- **Transición.** La entrante sube 12 px mientras aparece (220 ms). La saliente se desvanece (150 ms) y luego se oculta. Un cambio rápido corta la salida en curso. Con `prefers-reduced-motion` el cambio es instantáneo.
+- **Barras de la diapositiva 6.** Pasan de clases CSS a JS (`js/brechas.js`, con `Saber.animacion`). Cada entrada reinicia las barras desde cero y hace una sola pasada. Antes de este cambio, una medición en Chromium ya mostraba el reinicio correcto (escala 0 a 30 ms de volver, 1 tras 1,5 s); el cambio es para no depender del reflujo del navegador. Con movimiento reducido o al imprimir, quedan en su tamaño final.
+- **Responsive.** Por debajo de 900 px la diapositiva se apila y crece con su contenido. Antes, la altura mínima dejaba hueco en la diapositiva 5. El árbol J48 y la etiqueta de la rama recta (NSE2 y NSE3) tienen tamaños propios en pantallas angostas. Las etiquetas del nombre de cada columna 3D se ocultan solo por debajo de 600 px; la tabla de la diapositiva 3 ya los muestra.
+- **Árbol J48.** La condición de la rama recta va a la derecha de la línea, a media altura entre la raíz y la hoja. Antes, "NSE2 y NSE3" quedaba sobre la línea.
+- **3D.** Las etiquetas de las líneas de referencia tienen fondo de papel y más separación de la columna.
+- **PDF.** La impresión sigue con 9 páginas 16:9 sin animaciones a medias; la pista de teclado y el contador no salen.
 
 ## Notas para próximas pasadas
 

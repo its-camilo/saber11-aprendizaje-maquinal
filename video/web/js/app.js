@@ -82,6 +82,7 @@
   function crearAnimaciones(mazo) {
     return {
       j48: Saber.crearArbolJ48(mazo.querySelector("[data-arbol]")),
+      brechas: Saber.crearBrechas(mazo.querySelector("[data-brechas]")),
       bandit: Saber.crearCurvaBandit(mazo.querySelector("[data-curva]")),
       comparacion: Saber.crearComparacion(mazo.querySelector("[data-comparacion]"), datosDe("comparacion").filas),
     };
@@ -103,21 +104,19 @@
     const alEntrar = {
       colegios3d: () => territorio.alEntrar(),
       j48: () => animaciones.j48.recorrer(),
-      brechas: (elemento) => Saber.animarBrechas(elemento),
+      brechas: () => animaciones.brechas.animar(),
       bandit: () => animaciones.bandit.dibujar(),
       comparacion: () => animaciones.comparacion.animar(),
     };
 
     mazo.addEventListener("diapositiva:entrar", ({ detail }) => {
       const accion = alEntrar[contenido.diapositivas[detail.indice].tipo];
-      if (accion) accion(detail.elemento);
+      if (accion) accion();
     });
 
     const navegacion = Saber.crearNavegacion({
       mazo,
       diapositivas,
-      botonAnterior: document.querySelector("[data-anterior]"),
-      botonSiguiente: document.querySelector("[data-siguiente]"),
       contador: document.querySelector("[data-contador]"),
       anuncio: document.querySelector("[data-anuncio]"),
     });

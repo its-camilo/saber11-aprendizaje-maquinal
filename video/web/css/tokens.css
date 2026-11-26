@@ -62,12 +62,19 @@
 
   /* Movimiento */
   --dur-cambio: 160ms;
+  --dur-entrada: 220ms;
+  --dur-salida: 150ms;
   --dur-barra: 700ms;
   --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-@media (max-width: 720px) {
+/*
+ * Pantallas angostas (portátil pequeño, tablet y móvil): la diapositiva ya no
+ * es un lienzo fijo sino una columna que crece con su contenido. El corte de
+ * 900 px se repite en base.css y diapositivas.css (las media queries no leen variables).
+ */
+@media (max-width: 900px) {
   :root {
-    --u: 2.4vw;
+    --u: clamp(8px, 2.4vw, 11px);
   }
 }

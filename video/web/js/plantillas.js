@@ -17,20 +17,21 @@
 
   /* ---------- piezas comunes ---------- */
 
+  /* Marcas de posición: solo indicador visual, sin foco ni clic. */
   function pista(indice, total) {
     const marcas = Array.from({ length: total }, (_, i) => {
       const estado = i === indice ? "actual" : i < indice ? "vista" : "pendiente";
-      const actual = i === indice ? ' aria-current="step"' : "";
-      return `<li><button type="button" class="marca marca--${estado}" data-ir="${i}"${actual}
-        aria-label="Ir a la diapositiva ${i + 1}"></button></li>`;
+      return `<li><span class="marca marca--${estado}"></span></li>`;
     });
-    return `<nav class="pista" aria-label="Diapositivas"><ol>${marcas.join("")}</ol></nav>`;
+    return `<div class="pista" aria-hidden="true"><ol>${marcas.join("")}</ol></div>`;
   }
 
   function pie(indice, total, meta) {
+    const ayuda = indice === 0 ? '<span class="pie__ayuda">Usa ← → para navegar</span>' : "";
     return `<footer class="pie">
       <span>Diapositiva ${indice + 1} de ${total}</span>
       <span>${esc(meta.pie)}</span>
+      ${ayuda}
     </footer>`;
   }
 
@@ -166,9 +167,14 @@
       ? `<text class="arbolj48__hoja" x="${cx}" y="${hojaY + 38}">${esc(r.hoja)}</text>
          <text class="arbolj48__acierto" x="${cx}" y="${hojaY + 66}">${esc(r.acierto)} de acierto</text>`
       : `<text class="arbolj48__sigue" x="${cx}" y="${hojaY + 48}">${esc(r.hoja)}</text>`;
+    // La rama recta (la del centro) pone su condición a la derecha de la línea; las curvas, sobre su trazo.
+    const recta = Math.abs(cx - raiz.x) < 1;
+    const condicion = recta
+      ? `<text class="arbolj48__condicion arbolj48__condicion--recta" x="${cx + 16}" y="${hojaY - 24}">${esc(r.rama)}</text>`
+      : `<text class="arbolj48__condicion" x="${(raiz.x + cx) / 2}" y="${(y0 + hojaY) / 2 + 14}">${esc(r.rama)}</text>`;
     return `<g class="arbolj48__rama arbolj48__rama--${r.tono}" data-rama>
       <path class="arbolj48__arista" d="${camino}" pathLength="1"/>
-      <text class="arbolj48__condicion" x="${(raiz.x + cx) / 2}" y="${(y0 + hojaY) / 2 + 14}">${esc(r.rama)}</text>
+      ${condicion}
       <g class="arbolj48__nodo">
         <rect x="${cx - hojaW / 2}" y="${hojaY}" width="${hojaW}" height="${hojaH}"/>
         ${valor}
@@ -334,7 +340,7 @@
     const plantilla = PLANTILLAS[d.tipo];
     if (!plantilla) throw new Error(`No hay plantilla para el tipo "${d.tipo}"`);
     return `<section class="diapositiva diapositiva--${d.tipo}" id="d${indice + 1}" data-indice="${indice}"
-        role="group" aria-roledescription="diapositiva" aria-label="${indice + 1} de ${total}: ${esc(d.titulo)}">
+        role="group" aria-roledescription="diapositiva" tabindex="-1" aria-label="${indice + 1} de ${total}: ${esc(d.titulo)}">
       ${pista(indice, total)}
       <div class="diapositiva__cuerpo">${plantilla(d, meta)}</div>
       ${pie(indice, total, meta)}

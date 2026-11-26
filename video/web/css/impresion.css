@@ -50,7 +50,7 @@
 
   body > :not(.escenario),
   .controles,
-  .saltar,
+  .pie__ayuda,
   .escena__pie .boton,
   [data-recorrer],
   [data-repetir-comparacion] {

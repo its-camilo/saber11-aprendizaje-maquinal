@@ -11,19 +11,13 @@
   <link rel="stylesheet" href="css/impresion.css">
 </head>
 <body>
-  <a class="saltar" href="#controles">Ir a los controles de la presentación</a>
-
   <main class="escenario">
     <div class="mazo" data-mazo>
       <noscript><p class="sin-js">Esta presentación necesita JavaScript. El PDF equivalente está en video/presentacion.pdf.</p></noscript>
     </div>
   </main>
 
-  <div class="controles" id="controles" tabindex="-1">
-    <button type="button" class="boton" data-anterior>Anterior</button>
-    <span class="controles__contador" data-contador aria-hidden="true"></span>
-    <button type="button" class="boton boton--principal" data-siguiente>Siguiente</button>
-  </div>
+  <p class="controles" aria-hidden="true" data-contador></p>
   <p class="sr" aria-live="polite" data-anuncio></p>
 
   <script src="vendor/three.min.js"></script>
