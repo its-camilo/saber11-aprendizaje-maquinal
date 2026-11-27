@@ -174,6 +174,7 @@
       : `<text class="arbolj48__condicion" x="${(raiz.x + cx) / 2}" y="${(y0 + hojaY) / 2 + 14}">${esc(r.rama)}</text>`;
     return `<g class="arbolj48__rama arbolj48__rama--${r.tono}" data-rama>
       <path class="arbolj48__arista" d="${camino}" pathLength="1"/>
+      ${r.tono === "sigue" ? "" : `<path class="arbolj48__ruta" d="${camino}" pathLength="1"/>`}
       ${condicion}
       <g class="arbolj48__nodo">
         <rect x="${cx - hojaW / 2}" y="${hojaY}" width="${hojaW}" height="${hojaH}"/>
@@ -259,6 +260,7 @@
     const x = (v) => izq + (v / c.ejeX.max) * (der - izq);
     const y = (v) => abajo - (v / c.ejeY.max) * (abajo - arriba);
     const puntos = c.ventajaMiles.map((v, i) => `${x(i * c.pasoMiles).toFixed(1)} ${y(v).toFixed(1)}`);
+    const trazo = `M${puntos.join(" L")}`;
     const fin = puntos[puntos.length - 1].split(" ");
     const marcasY = lista(c.ejeY.marcas, (m) => `<line class="curva__rejilla" x1="${izq}" x2="${der}" y1="${y(m)}" y2="${y(m)}"/>
       <text class="curva__marca curva__marca--y" x="${izq - 10}" y="${y(m) + 6}">${m}</text>`);
@@ -270,7 +272,8 @@
         <text class="curva__titulo-eje" x="${izq - 44}" y="${arriba - 8}" text-anchor="start">${esc(c.ejeY.titulo)}</text>
         <line class="curva__base" x1="${izq}" x2="${der}" y1="${y(0)}" y2="${y(0)}"/>
         <text class="curva__etiqueta curva__etiqueta--base" x="${der + 12}" y="${y(0) + 6}">${esc(c.base)}</text>
-        <path class="curva__linea" d="M${puntos.join(" L")}" pathLength="1" data-linea/>
+        <path class="curva__linea" d="${trazo}" pathLength="1" data-linea/>
+        <path class="curva__viaje" d="${trazo}" pathLength="1" aria-hidden="true"/>
         <circle class="curva__cabeza" r="8" cx="${fin[0]}" cy="${fin[1]}" data-cabeza/>
         <g class="curva__final" data-final>
           <text class="curva__etiqueta" x="${Number(fin[0]) + 16}" y="${Number(fin[1]) + 6}">${esc(c.serie)}</text>

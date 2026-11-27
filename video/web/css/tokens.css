@@ -60,12 +60,15 @@
   --esp-4: calc(var(--u) * 2.6);
   --esp-5: calc(var(--u) * 4);
 
-  /* Movimiento */
+  /* Movimiento. Las transiciones entre diapositivas las lee navegacion.js (mismos valores en ms). */
   --dur-cambio: 160ms;
-  --dur-entrada: 220ms;
-  --dur-salida: 150ms;
+  --dur-salida: 140ms;        /* la saliente se desvanece primero */
+  --retardo-entrada: 120ms;   /* la entrante espera a que la saliente ya no se vea */
+  --dur-entrada: 340ms;
   --dur-barra: 700ms;
   --curva: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --curva-salida: cubic-bezier(0.4, 0, 1, 1);      /* ease-in: arranca suave y sale sin frenar */
+  --curva-entrada: cubic-bezier(0.22, 1, 0.36, 1); /* ease-out: llega y frena con suavidad */
 }
 
 /*
@@ -73,7 +76,7 @@
  * es un lienzo fijo sino una columna que crece con su contenido. El corte de
  * 900 px se repite en base.css y diapositivas.css (las media queries no leen variables).
  */
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   :root {
     --u: clamp(8px, 2.4vw, 11px);
   }

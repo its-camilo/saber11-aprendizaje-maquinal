@@ -124,7 +124,7 @@ button {
   min-height: 36px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
   .escenario {
     display: block;
   }

@@ -89,6 +89,62 @@ Código: `js/animacion.js` es el único que llama a `requestAnimationFrame`. Da 
 - **Casillas R² y 65,1 % (diapositiva 3).** En el PDF las dos compartían media columna y el texto quedaba apretado. Las tres casillas destacadas pasan a filas de ancho completo (`casilla--fila`): cifra a la izquierda, etiqueta a la derecha a 1,35u de cuerpo, con interlineado 1,35 y más relleno. La misma pieza se usa en las casillas de cruces de la diapositiva 2.
 - **Árbol J48.** Las condiciones (NSE1, NSE2 y NSE3, NSE4) van sobre la arista con un halo de papel, para que la línea no las tache.
 
+## Pasada 5: transición pulida y animaciones continuas
+
+Cambia lo dicho en la pasada 3 sobre el movimiento: ya no todo se dispara solo al entrar. Se añade un bucle sutil a los elementos 2D que lo admiten. La pasada 3 seguía vigente para las animaciones de entrada (3D, árbol, barras, curva y comparación).
+
+### Transición entre diapositivas
+
+Antes: la entrante subía 12 px en 220 ms mientras la saliente se desvanecía en 150 ms, a la vez. Ambas se veían mezcladas y la saliente, al estar por encima, se superponía a la entrante. En móvil, la altura del mazo saltaba de una a otra al cambiar.
+
+Ahora, en dos fases:
+
+| Fase | Duración | Curva | Movimiento |
+|---|---|---|---|
+| Salida | 140 ms | `cubic-bezier(0.4, 0, 1, 1)` (ease-in) | opacidad 1 a 0, sube 6 px |
+| Entrada | 340 ms, con retardo de 120 ms | `cubic-bezier(0.22, 1, 0.36, 1)` (ease-out) | opacidad 0 a 1, sube 14 px a su sitio |
+
+- Capas: la entrante va en `z-index: 2` y la saliente en `1`. La entrante empieza con opacidad 0 durante su retardo, así que no hay dos textos a medio intensidad a la vez.
+- Interrumpir: `navegacion.js` anima con la API Web Animations y parte siempre de la opacidad y la posición visibles en ese instante. Un cambio rápido no da un parpadeo.
+- Móvil (≤ 900 px): la altura del mazo pasa de la altura anterior a la nueva con la misma curva y retardo. La página no salta al entrar ni al salir.
+- Movimiento reducido: cambio instantáneo, sin animación.
+- Los valores viven en `css/tokens.css` (`--dur-salida`, `--retardo-entrada`, `--dur-entrada`, `--curva-salida`, `--curva-entrada`) y se repiten como constantes en `navegacion.js`.
+
+### Animaciones continuas
+
+Todas están en `css/movimiento.css` y son solo CSS: no hay `requestAnimationFrame` propio. Cada bucle empieza y termina en su estado de reposo, así que sin animación (movimiento reducido o impresión) la diapositiva queda en su estado final.
+
+Solo corren mientras la diapositiva se ve: una diapositiva oculta tiene `display: none` y el navegador detiene sus animaciones.
+
+| Diapositiva | Elemento 2D | Movimiento | Detalle |
+|---|---|---|---|
+| 1 y 9 | Burbujas de la hoja de respuestas | Respiración: escala 1 a 1,06, ciclo de 4,4 s | Las burbujas 2 y 3 tienen desfase para no moverse a la vez |
+| Todas | Marca de posición actual de la pista | Pulso horizontal: escala X 1 a 1,14, ciclo de 3,6 s | Solo la marca actual; las marcas vistas y pendientes quedan quietas |
+| 3 | Etiquetas de 100, 200 y 300 puntos | Flotación vertical de 0,35u, ciclo de 5,2 s | Las cifras de cada columna y los nombres quedan quietos |
+| 5 | Trazo de luz sobre la ruta del árbol | Entra por la raíz, llega a la hoja, hace una pausa y vuelve. Ciclo de 8 s | Ruta NSE a NSE1 (Bajo) desde 3,8 s y ruta NSE a NSE4 (Alto) desde 7,8 s; empiezan tras el recorrido de entrada |
+| 5 | Hojas Bajo y Alto | Pulso de escala 1 a 1,035 al llegar la luz | Misma sincronía que el trazo. La hoja "sigue preguntando" queda quieta |
+| 6 | Barras de brechas | Brillo blanco de 30 % que recorre la barra. Ciclo de 4,8 s | Empieza tras la entrada (≈ 2,2 s) con desfase de 0,6 s por fila. El valor y la etiqueta no se mueven |
+| 7 | Punto sobre la curva de LinUCB | Recorre la curva de 0 a 1 con movimiento lineal, se desvanece al inicio y al final. Ciclo de 6 s | Empieza tras el trazo de entrada (2,4 s). El valor final y la cabeza de la curva quedan quietos |
+| 8 | Marcas de las tres coincidencias | Pulso de escala 1 a 1,25, ciclo de 3,8 s | Desfase entre las tres. La tabla 2022/2025 queda quieta para no sugerir que sus valores cambian |
+
+Quietos a propósito: las barras de datos (embudo de la 2, exactitud de la 5, franja de la 4), la tabla de la 3, la columna 3D (el arrastre ya la mueve), las cifras y la tabla de la 8. Moverlas sugeriría que los datos cambian.
+
+### Verificación
+
+Script en `~/workspace/capturas-animaciones-continuas/verificar.cjs` (Chromium con Playwright). Resultado: 51 de 51 comprobaciones OK y cero errores de consola. Solo queda un aviso, de `vendor/three.min.js`, que ya estaba en la versión anterior.
+
+- Transición: la saliente y la entrante no superan opacidad 0,15 a la vez. La entrante aparece a los 120 ms de retardo. En móvil (390 px), la altura del mazo arranca en la de la anterior (587 px) y no sale del rango entre la anterior y la nueva (587 a 1037 px).
+- Navegación con flechas: 1 a 9 y de vuelta, Home y el hash coinciden con la diapositiva visible.
+- Responsive sin desbordes en 1920, 1024 y 390 px para las 9 diapositivas.
+- Animaciones continuas: los valores cambian en el tiempo en las diapositivas 1, 3, 5, 6, 7 y 8 (capturas de dos o tres instantes en `~/workspace/capturas-animaciones-continuas/`).
+- Pausa: con la 6 visible, cero animaciones en diapositivas ocultas.
+- Movimiento reducido: cero animaciones y cero transiciones CSS en todas las diapositivas.
+- Textos y cifras de las 9 diapositivas: idénticos a la versión de Git (`HEAD`).
+
+### Corrección del PDF (página 5)
+
+El PDF regenerado en esta pasada salió con la página 5 rota: el árbol J48 se veía a mayor escala y cortado, sin las hojas Bajo y Alto. La causa no estaba en las animaciones: durante `page.pdf()`, Chromium evalúa las media queries con un ancho menor de 900 px (medido: `(max-width: 900px)` pasa a `true` durante la paginación y vuelve a `false` después), así que las reglas responsive apilaban la rejilla de la diapositiva 5 a una columna y el árbol crecía hasta salirse de la página. El defecto ya estaba en el PDF de Git (página 5 idéntica píxel a píxel). La corrección: las media queries de ancho (`max-width: 900px` y `max-width: 600px` en `base.css`, `tokens.css` y `diapositivas.css`) ahora son `screen and (...)`, para que solo apliquen en pantalla y nunca en impresión. Tras el cambio, el PDF regenerado tiene 9 páginas 16:9 (831.468 bytes) y la página 5 muestra el árbol completo (Bajo 76 %, sigue preguntando, Alto 92 %); las páginas 3 y 6 también se revisaron visualmente y están completas.
+
 ## Sistema de tokens vigente
 
 ### Color

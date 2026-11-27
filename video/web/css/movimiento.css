@@ -1,0 +1,196 @@
+/*
+ * Animaciones continuas (en bucle) de los elementos 2D. Ver DISENO.md, pasada 5.
+ *
+ * Reglas:
+ * - Solo corren mientras la diapositiva se ve. Una diapositiva oculta tiene
+ *   display:none y el navegador detiene sus animaciones; al volver, el bucle
+ *   empieza de nuevo.
+ * - Cada bucle empieza y termina en el estado de reposo (sin desplazamiento,
+ *   sin cambio de opacidad, sin cambio de tamaño). Con movimiento reducido o al
+ *   imprimir, la diapositiva queda exactamente en su estado final.
+ * - Nada cambia los números ni las etiquetas. Los valores de datos (barras de
+ *   resultados, cifras, la franja de la diapositiva 4) se quedan quietos.
+ * - Los bucles son solo CSS: no hay requestAnimationFrame propio.
+ */
+
+/* ---------- burbujas de la hoja de respuestas (1 portada, 9 cierre) ---------- */
+
+@keyframes respirar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.diapositiva--portada .burbuja,
+.diapositiva--cierre .burbuja {
+  animation: respirar 4.4s ease-in-out infinite;
+}
+
+.diapositiva--portada .opcion:nth-child(2) .burbuja,
+.diapositiva--cierre .opcion:nth-child(2) .burbuja {
+  animation-delay: -1.5s;
+}
+
+.diapositiva--portada .opcion:nth-child(3) .burbuja,
+.diapositiva--cierre .opcion:nth-child(3) .burbuja {
+  animation-delay: -3s;
+}
+
+/* ---------- marca de posición actual (pista de la izquierda, todas las diapositivas) ---------- */
+
+@keyframes pulsar-marca {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(1.14); }
+}
+
+.marca--actual::before {
+  transform-origin: left center;
+  animation: pulsar-marca 3.6s ease-in-out infinite;
+}
+
+/* ---------- diapositiva 3: etiquetas de 100, 200 y 300 puntos ---------- */
+
+@keyframes flotar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 calc(var(--u) * -0.35); }
+}
+
+/* La propiedad individual translate se suma al transform que ya coloca la etiqueta. */
+.etiqueta3d--regla {
+  animation: flotar 5.2s ease-in-out infinite;
+}
+
+/* ---------- diapositiva 5: la luz recorre la ruta hasta NSE1 (Bajo) y NSE4 (Alto) ---------- */
+
+/*
+ * Un trazo corto de luz (dash con pathLength 1) entra por la raíz, llega a la
+ * hoja, hace una pausa y vuelve. El ciclo dura 8 s. La ruta a NSE1 empieza en
+ * 3,8 s, cuando termina el recorrido de entrada; la ruta a NSE4 empieza en 7,8 s.
+ */
+@keyframes viaje-ruta {
+  0% { stroke-dashoffset: 0.14; }
+  22% { stroke-dashoffset: -1; }
+  30% { stroke-dashoffset: -1; }
+  48% { stroke-dashoffset: 0; }
+  50%, 100% { stroke-dashoffset: 0.14; }
+}
+
+@keyframes pulso-hoja {
+  0%, 22% { transform: scale(1); }
+  26% { transform: scale(1.035); }
+  34%, 100% { transform: scale(1); }
+}
+
+.arbolj48__ruta {
+  fill: none;
+  stroke: var(--grafito);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 0.14 2;
+  stroke-dashoffset: 0.14;
+  pointer-events: none;
+}
+
+.arbolj48__rama--bajo .arbolj48__ruta {
+  animation: viaje-ruta 8s ease-in-out 3.8s infinite;
+}
+
+.arbolj48__rama--alto .arbolj48__ruta {
+  animation: viaje-ruta 8s ease-in-out 7.8s infinite;
+}
+
+.arbolj48__rama--bajo .arbolj48__nodo,
+.arbolj48__rama--alto .arbolj48__nodo {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.arbolj48__rama--bajo .arbolj48__nodo {
+  animation: pulso-hoja 8s ease-in-out 3.8s infinite;
+}
+
+.arbolj48__rama--alto .arbolj48__nodo {
+  animation: pulso-hoja 8s ease-in-out 7.8s infinite;
+}
+
+/* ---------- diapositiva 6: brillo que recorre cada barra de brecha ---------- */
+
+@keyframes brillo {
+  0% { transform: translateX(-100%); }
+  40%, 100% { transform: translateX(230%); }
+}
+
+/* El brillo va dentro de la barra (recortado por ella); el valor y la etiqueta no se mueven. */
+.brecha__barra {
+  overflow: hidden;
+}
+
+.brecha__barra::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(90deg, rgb(255 255 255 / 0), rgb(255 255 255 / 0.3), rgb(255 255 255 / 0));
+  transform: translateX(-100%);
+  animation: brillo 4.8s ease-in-out infinite;
+  /* Cada barra empieza después de su entrada (≈ 2 s) y con un desfase de 0,6 s entre filas. */
+  animation-delay: calc(2.2s + var(--i) * 0.6s);
+}
+
+/* ---------- diapositiva 7: punto que recorre la curva del bandit ---------- */
+
+/*
+ * El punto es un dash de longitud casi cero con extremos redondos. Recorre la
+ * curva de 0 a 1 (pathLength) con movimiento lineal; se desvanece al inicio y al
+ * final para que el salto de vuelta al origen no se vea. Empieza tras el trazo de entrada (≈ 2,3 s).
+ */
+@keyframes viajar-punto {
+  0% { stroke-dashoffset: 0; opacity: 0; }
+  10% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { stroke-dashoffset: -1; opacity: 0; }
+}
+
+.curva__viaje {
+  fill: none;
+  stroke: var(--tinta);
+  stroke-width: 13;
+  stroke-linecap: round;
+  stroke-dasharray: 0.001 2;
+  stroke-dashoffset: 0;
+  opacity: 0;
+  animation: viajar-punto 6s linear 2.4s infinite;
+}
+
+/* ---------- diapositiva 8: marcas de los tres puntos de coincidencia ---------- */
+
+@keyframes pulsar-punto {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+.diapositiva--comparacion .marcadas li::before {
+  animation: pulsar-punto 3.8s ease-in-out infinite;
+}
+
+.diapositiva--comparacion .marcadas li:nth-child(2)::before {
+  animation-delay: -1.2s;
+}
+
+.diapositiva--comparacion .marcadas li:nth-child(3)::before {
+  animation-delay: -2.4s;
+}
+
+/* ---------- movimiento reducido: ni bucles ni transiciones CSS ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .diapositiva,
+  .diapositiva *,
+  .diapositiva::before,
+  .diapositiva *::before,
+  .diapositiva *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
